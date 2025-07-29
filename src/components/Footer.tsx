@@ -100,7 +100,7 @@ const Footer = () => {
             © 2025 Ocliq. All rights reserved.
           </div>
           <div className="text-slate-400 text-sm">
-            Made with ❤️ and AI by Ocliq Team
+            Made with ❤️ by Ocliq Team
           </div>
         </div>
       </div>

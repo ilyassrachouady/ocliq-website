@@ -78,12 +78,47 @@ const Hero = () => {
           {/* Trust badges */}
           <div className="opacity-60">
             <p className="text-sm text-slate-500 mb-6 uppercase tracking-wider font-medium">Trusted by companies like</p>
-            <div className="flex items-center justify-center space-x-8 flex-wrap">
-              <div className="text-xl font-bold text-slate-400 hover:text-slate-600 transition-colors">TechFlow</div>
-              <div className="text-xl font-bold text-slate-400 hover:text-slate-600 transition-colors">EcoLux</div>
-              <div className="text-xl font-bold text-slate-400 hover:text-slate-600 transition-colors">MedConnect</div>
-              <div className="text-xl font-bold text-slate-400 hover:text-slate-600 transition-colors">FinanceHub</div>
-              <div className="text-xl font-bold text-slate-400 hover:text-slate-600 transition-colors">GrowthLab</div>
+            <div className="flex items-center justify-center space-x-6 sm:space-x-8 flex-wrap gap-y-4">
+              <a
+                href="https://preptiq.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                Preptiq
+              </a>
+              <a
+                href="https://pursueu.enrolla.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                PursueU
+              </a>
+              <a
+                href="https://propbolt.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                PropBolt
+              </a>
+              <a
+                href="https://lemayconsulting.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                LemayConsulting
+              </a>
+              <a
+                href="https://kratomonline.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                KratomOnline.ca
+              </a>
             </div>
           </div>
         </div>
