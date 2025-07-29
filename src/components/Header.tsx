@@ -26,39 +26,39 @@ const Header = () => {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-slate-900">Ocliq</span>
+            <span className="text-xl sm:text-2xl font-bold text-slate-900">Ocliq</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+            <button
               onClick={() => scrollToSection('services')}
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm lg:text-base text-slate-600 hover:text-slate-900 transition-colors"
             >
               Services
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('process')}
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm lg:text-base text-slate-600 hover:text-slate-900 transition-colors"
             >
               Process
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm lg:text-base text-slate-600 hover:text-slate-900 transition-colors"
             >
               Portfolio
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('pricing')}
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm lg:text-base text-slate-600 hover:text-slate-900 transition-colors"
             >
               Pricing
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
-              className="bg-[#00FFD1] text-slate-900 px-6 py-2 rounded-full font-medium hover:bg-[#00FFD1]/90 transition-all duration-200 hover:scale-105"
+              className="bg-[#00FFD1] text-slate-900 px-4 lg:px-6 py-2 rounded-full font-medium hover:bg-[#00FFD1]/90 transition-all duration-200 hover:scale-105 text-sm lg:text-base"
             >
               Get Started
             </button>
@@ -67,9 +67,9 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-900"
+              className="text-slate-900 p-1"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>

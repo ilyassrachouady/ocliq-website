@@ -10,13 +10,13 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-8 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
+    <section id="pricing" className="section-padding bg-gradient-to-br from-slate-50 to-white">
+      <div className="max-w-6xl mx-auto container-padding">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h2 className="heading-lg font-bold text-slate-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 mb-8 sm:mb-12">
+          <p className="text-responsive text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 mb-6 sm:mb-8 md:mb-12">
             We offer custom solutions tailored to your specific needs. Every project is unique, and we work closely with you to deliver exactly what your business requires.
           </p>
         </div>

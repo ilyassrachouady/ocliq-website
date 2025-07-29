@@ -45,9 +45,9 @@ const Portfolio = () => {
   const project = projects[currentProject];
 
   return (
-    <section id="portfolio" className="py-8 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+    <section id="portfolio" className="section-padding bg-gradient-to-br from-slate-50 to-white">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
             Portfolio & Case Studies
           </h2>

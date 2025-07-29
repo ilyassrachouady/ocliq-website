@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -131,3 +131,41 @@ button {
 .stagger-animation:nth-child(3) { animation-delay: 0.3s; }
 .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
 .stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive spacing utilities */
+.section-padding {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+}
+
+.header-offset {
+  @apply pt-14 sm:pt-16 lg:pt-20;
+}
+
+/* Responsive text utilities */
+.heading-xl {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+}
+
+.heading-lg {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+}
+
+.heading-md {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+}
+
+.heading-sm {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+}
+
+.text-responsive {
+  @apply text-sm sm:text-base md:text-lg;
+}
+
+.text-responsive-sm {
+  @apply text-xs sm:text-sm md:text-base;
+}
