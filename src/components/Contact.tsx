@@ -49,14 +49,14 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+    <section id="contact" className="py-8 sm:py-16 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Let's discuss how our AI-powered approach can accelerate your growth. Book a free discovery call or send us a message.
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+            Let's discuss how our expertise can accelerate your growth. Book a free discovery call or send us a message.
           </p>
         </div>
         

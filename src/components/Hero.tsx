@@ -41,11 +41,11 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" ref={heroRef}>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center" ref={heroRef}>
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-slate-900/5 px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center space-x-2 bg-slate-900/5 px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <Sparkles className="w-4 h-4 text-[#00FFD1]" />
-            <span className="text-sm font-medium text-slate-700">Premium Website Design & Optimization</span>
+            <span className="text-xs sm:text-sm font-medium text-slate-700">Premium Website Design & Optimization</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">

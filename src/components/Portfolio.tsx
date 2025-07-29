@@ -45,30 +45,30 @@ const Portfolio = () => {
   const project = projects[currentProject];
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-br from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+    <section id="portfolio" className="py-8 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
             Portfolio & Case Studies
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             Real results from real businesses. See how our proven approach delivers measurable growth and increased profits.
           </p>
         </div>
         
         <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative group">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="relative group order-2 lg:order-1">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-700">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="text-sm font-medium opacity-80 mb-1">{project.category}</div>
-                  <div className="text-xl font-bold">{project.title}</div>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+                  <div className="text-xs sm:text-sm font-medium opacity-80 mb-1">{project.category}</div>
+                  <div className="text-lg sm:text-xl font-bold">{project.title}</div>
                 </div>
               </div>
               
@@ -78,24 +78,24 @@ const Portfolio = () => {
               </div>
             </div>
             
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <TrendingUp className="w-5 h-5 text-[#00FFD1]" />
-                <span className="text-sm font-semibold text-[#00FFD1] uppercase tracking-wide">Case Study</span>
+            <div className="order-1 lg:order-2 px-4 sm:px-0">
+              <div className="flex items-center space-x-2 mb-3 sm:mb-4">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-[#00FFD1]" />
+                <span className="text-xs sm:text-sm font-semibold text-[#00FFD1] uppercase tracking-wide">Case Study</span>
               </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
+
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 leading-tight">
                 {project.title}
               </h3>
-              
-              <p className="text-slate-600 mb-6 leading-relaxed">
+
+              <p className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-none lg:max-w-lg">
                 {project.description}
               </p>
-              
-              <div className="grid grid-cols-3 gap-4 mb-6">
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {project.metrics.map((metric, index) => (
-                  <div key={index} className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                    <div className="text-lg font-bold text-slate-900">{metric}</div>
+                  <div key={index} className="text-center p-3 sm:p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 leading-tight">{metric}</div>
                   </div>
                 ))}
               </div>
