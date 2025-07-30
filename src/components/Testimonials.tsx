@@ -12,11 +12,11 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      name: 'Philippe Lemay',
-      role: 'CEO, Consultant',
-      company: 'Lemay Consulting',
-      image: 'https://d2gjqh9j26unp0.cloudfront.net/profilepic/a300b9afe6ec3aacbd038669039b5c6c',
-      quote: 'Working with Ocliq transformed our online presence. The professional design perfectly represents our consulting services and has significantly improved our client acquisition.',
+      name: 'Amine Belaoudi',
+      role: 'Co-Founder',
+      company: 'PursueU',
+      image: 'https://i.ibb.co/xtF5jSLX/1734732308412.jpg',
+      quote: 'Ocliq has been instrumental in transforming our website into a powerful lead generation and profit-driving machine. Their team is committed to delivering exceptional results.',
       rating: 5
     },
     {
