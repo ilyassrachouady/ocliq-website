@@ -9,7 +9,7 @@ const Portfolio = () => {
       title: 'PursueU',
       category: 'Education Platform',
       url: 'https://persueu.netlify.app/',
-      image: 'https://i.ibb.co/cchKKP31/Screenshot-2025-06-05-at-9-00-31-AM.png',
+      image: 'https://i.ibb.co/yF0ztYhs/screencapture-persueu-netlify-app-recommendations-2025-07-30-21-07-03.png',
       metrics: ['3k+ Happy Students', '5-Min Quiz', 'Personalized Matching'],
       description: 'Complete educational platform redesign featuring an interactive program matching system. Built a comprehensive quiz-driven experience that helps students discover their ideal academic programs through personalized assessments and detailed program recommendations.',
       beforeAfter: 'Transformed student engagement with modern quiz-driven program discovery',
