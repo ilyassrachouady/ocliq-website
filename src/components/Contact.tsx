@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Calendar, Send } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Mail, MapPin, Calendar } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-    projectType: 'website-design'
-  });
+  // Load Calendly script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-      projectType: 'website-design'
-    });
-  };
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -59,105 +55,23 @@ const Contact = () => {
             Let's discuss how our expertise can accelerate your growth. Book a free discovery call or send us a message.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Form */}
+          {/* Calendly Integration */}
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#00FFD1] focus:ring-2 focus:ring-[#00FFD1]/20 focus:outline-none transition-colors"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#00FFD1] focus:ring-2 focus:ring-[#00FFD1]/20 focus:outline-none transition-colors"
-                    placeholder="Enter your email"
-                  />
-                </div>
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+              <div className="p-6 bg-gradient-to-r from-[#00FFD1]/10 to-blue-50 border-b border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Schedule Your Free Discovery Call</h3>
+                <p className="text-slate-600">
+                  Book a 30-minute consultation to discuss your project and see how we can help transform your business.
+                </p>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#00FFD1] focus:ring-2 focus:ring-[#00FFD1]/20 focus:outline-none transition-colors"
-                    placeholder="Your company name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-slate-700 mb-2">
-                    Project Type
-                  </label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#00FFD1] focus:ring-2 focus:ring-[#00FFD1]/20 focus:outline-none transition-colors"
-                  >
-                    <option value="website-design">Website Design</option>
-                    <option value="ecommerce">E-commerce</option>
-                    <option value="web-app">Web Application</option>
-                    <option value="redesign">Website Redesign</option>
-                    <option value="optimization">Conversion Optimization</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                  Project Details *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#00FFD1] focus:ring-2 focus:ring-[#00FFD1]/20 focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your project, goals, and timeline..."
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="group w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-800 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-              >
-                <span>Send Message</span>
-                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/ocliqagency/30min"
+                style={{ minWidth: '320px', height: '700px' }}
+              ></div>
+            </div>
           </div>
           
           {/* Contact Info & FAQs */}
@@ -169,11 +83,9 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-[#00FFD1]" />
-                  <span className="text-slate-600">contact@ocliq.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-[#00FFD1]" />
-                  <span className="text-slate-600">+1 (555) 123-4567</span>
+                  <a href="mailto:ocliqagency@gmail.com" className="text-slate-600 hover:text-[#00FFD1] transition-colors">
+                    ocliqagency@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-[#00FFD1]" />
@@ -182,10 +94,13 @@ const Contact = () => {
               </div>
               
               <div className="mt-6 pt-6 border-t border-slate-200">
-                <button className="group w-full bg-[#00FFD1] text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-[#00FFD1]/90 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Discovery Call</span>
-                </button>
+                <a
+                  href="mailto:ocliqagency@gmail.com"
+                  className="group w-full bg-[#00FFD1] text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-[#00FFD1]/90 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Send Email</span>
+                </a>
               </div>
             </div>
             

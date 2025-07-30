@@ -6,31 +6,37 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'TechFlow SaaS',
-      category: 'B2B Software',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      metrics: ['+127% conversions', '2.1s load time', '+85% user engagement'],
-      description: 'Complete website analysis, redesign and optimization of a B2B SaaS platform, resulting in significant conversion improvements and lead generation.',
-      beforeAfter: 'Before: 2.3% conversion rate | After: 5.2% conversion rate',
-      testimonial: '"Ocliq transformed our website into a lead generation machine. Our demo requests increased by 127% in just 3 months."'
+      title: 'PursueU',
+      category: 'Education Platform',
+      image: 'https://upwork-usw2-prod-file-storage-wp4.s3.us-west-2.amazonaws.com/workplace/attachment/0fecffaf1665eea24708d7a7ec6c0474?response-content-disposition=inline%3B%20filename%3D%22Screenshot%25202025-06-12%2520at%252019.34.49.png%22%3B%20filename%2A%3Dutf-8%27%27Screenshot%25202025-06-12%2520at%252019.34.49.png&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAXEWw9t%2BoVSmvgAtIclWhL24AOovuvfEwVW5LjOp3PZAiEA96KiACY6qs5AnWT3tMonIrqo9GWerB9wWyluOLGkxGwqmQUIxP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw3Mzk5MzkxNzM4MTkiDN6vou%2F6E6Qu3YKVbSrtBG8uI99%2F77hkLY6qvZkPS8WU70QI4SLFRo1J%2F0Vxu%2Bge1yKj1R%2FDELnyyWSoRJHhp1Ldh6J53G2dHt89IqWY3D4UsNGDbhqN80H4F93Za9JCtQmbJHbbKgTmYGYMKCTCoCRhe4pOGQpCwzNphw%2B5Ptw24%2Fe9nCj7I8bY2xtNFmR7r52o56d9klSzRfDpkrpYZX2GAGb8Uh1B1%2B7ssz3AA8wABguhuvm7wJ4u4OWfOxBLNxX8Ujp56ZH4nG%2F%2FZ24uMnK9BIXOJXSdmc2KABrKndtIe8sfAJqQwhRXAsNR488zY%2F36u6bpiDmlWcKlJkMTDSihH3uV2e0oTYSj3pGVN2op9G98DXqZp2C9M1ix9kD2dzKpEC3U%2BZzXngUQrWDs%2BGj9Y8mnaOZXOx%2FUof8WcOhvgW%2FGxxdpSm%2B4JFsyTHojWTPOE12a8uE9f7QMsmYhR8MjKGFAYn9GvvyL%2BFbn8EACJ0OmUADfTsYbKlGsyU1DloXt3vYUh5jJl%2FjX5Bup4SNbIGK6V6hk697K%2BULgaubBfHbNd66HE1wLCyhMuat5YalrTNui5IaxkVjH%2F8%2BmwHBwPwW4vxdW8jDE3TH7enI4rNyIT%2BAWUjZQEUr%2FfUSYQVB87g3PvhlTYEYv%2FolFTZ6AsbUamuk4%2BqgyYs8RwE%2BWzbS3lW%2FD9inUWfqoOF3LDUQdgM5JTzvColNRLa8HCgonAnPJ28Ot5m%2FbRORZ6oye4B225VF1SL%2F7gMI79g6D5YxRFIcnoTs402DxNMcZEM7l%2FSi%2BgZrkW0TqtThdievCyu%2BF2C0vNQ7%2BepTurx4u1KPMIh8w%2F4t92WlhWTCmxqnEBjqbAV5ng%2Flzk%2BnyoYQaNw2YqYQlAZ9ABCJPBoa6I6eKgiaEHUJ745ZluOS5%2FtTGuVVP%2F8zBT8hN%2FG1lycoGwclob9rgboxoXxXEDCtxkWuG80RMRs5Czhb5D5A%2FcJnQRGwuDpT1zk%2FLyRjquVMgt3sYpUXpQsFtns3oo4RDZlp1am0YifR9r5QLbFIVadoywWcMpmoUGhWnhokafhaD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250730T185203Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=ASIA2YR6PYW54RILMSW2%2F20250730%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=dac8c9f039440ca7b6aecd90316dc02f92a7078e478a5723baf690dddea9cd10',
+      url: 'https://persueu.netlify.app/',
+      metrics: ['3k+ Happy Students', '5-Min Quiz', 'Personalized Matching'],
+      description: 'Complete educational platform redesign featuring an interactive program matching system. Built a comprehensive quiz-driven experience that helps students discover their ideal academic programs through personalized assessments and detailed program recommendations.',
+      beforeAfter: 'Transformed student engagement with modern quiz-driven program discovery',
+      testimonial: '"The design exceeded our expectations. Ocliq created an intuitive platform that perfectly captures our vision for personalized education matching." - PursueU Team',
+      features: ['Personalized Program Matching', 'Interactive Quiz System', 'Student Success Stories', 'Mobile-Optimized Experience']
     },
     {
-      title: 'EcoLux E-commerce',
+      title: 'LemayConsulting',
+      category: 'Business Consulting',
+      image: 'https://amineb.site/assets/images/lemay.png',
+      url: 'https://lemayconsulting.com',
+      metrics: ['Professional Design', 'Lead Generation', 'Mobile Responsive'],
+      description: 'Professional consulting website designed to establish credibility and generate qualified leads for business consulting services.',
+      beforeAfter: 'Modern professional presence for business consulting',
+      testimonial: '"The new website perfectly represents our professional services and has significantly improved our client acquisition process."',
+      features: ['Professional Branding', 'Service Showcase', 'Contact Integration', 'SEO Optimized']
+    },
+    {
+      title: 'KratomOnline.ca',
       category: 'E-commerce',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      metrics: ['+189% revenue', '3x mobile sales', '+156% AOV'],
-      description: 'Complete e-commerce redesign focusing on user experience, mobile optimization, and conversion rate improvement.',
-      beforeAfter: 'Before: $180k monthly | After: $520k monthly',
-      testimonial: '"The new design not only looks amazing but our sales have nearly tripled. Best investment we\'ve made."'
-    },
-    {
-      title: 'MedConnect',
-      category: 'Healthcare',
-      image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      metrics: ['+195% appointments', '60% faster booking', '+78% retention'],
-      description: 'Healthcare website redesign focusing on trust-building, streamlined appointment booking, and patient experience optimization.',
-      beforeAfter: 'Before: 450 appointments/month | After: 1,325 appointments/month',
-      testimonial: '"Patient bookings nearly tripled after the redesign. The new website builds trust and makes booking effortless."'
+      image: 'https://amineb.site/assets/images/kratom.png',
+      url: 'https://kratomonline.ca',
+      metrics: ['E-commerce Platform', 'Product Catalog', 'Secure Checkout'],
+      description: 'Complete e-commerce solution for kratom products with secure payment processing, product catalog, and customer management system.',
+      beforeAfter: 'Full-featured e-commerce platform for specialized products',
+      testimonial: '"The e-commerce platform is exactly what we needed - professional, secure, and easy to manage our product inventory."',
+      features: ['Product Management', 'Secure Payments', 'Inventory System', 'Customer Accounts']
     }
   ];
 
@@ -72,10 +78,15 @@ const Portfolio = () => {
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 flex items-center space-x-2 group-hover:scale-110 group-hover:shadow-xl transition-all duration-500">
-                <ExternalLink className="w-4 h-4 text-slate-600" />
-                <span className="text-sm font-medium text-slate-600">View Live Site</span>
-              </div>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 flex items-center space-x-2 group-hover:scale-110 group-hover:shadow-xl transition-all duration-500 hover:bg-[#00FFD1] hover:text-white"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span className="text-sm font-medium">View Live Site</span>
+              </a>
             </div>
             
             <div className="order-1 lg:order-2 px-4 sm:px-0">
@@ -100,11 +111,23 @@ const Portfolio = () => {
                 ))}
               </div>
               
-              <div className="bg-gradient-to-r from-[#00FFD1]/10 to-blue-500/10 rounded-xl p-6 mb-8">
-                <div className="text-sm font-semibold text-slate-700 mb-2">Results</div>
+              <div className="bg-gradient-to-r from-[#00FFD1]/10 to-blue-500/10 rounded-xl p-6 mb-6">
+                <div className="text-sm font-semibold text-slate-700 mb-2">Project Overview</div>
                 <div className="text-slate-600">{project.beforeAfter}</div>
               </div>
-              
+
+              <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 mb-6">
+                <div className="text-sm font-semibold text-slate-700 mb-3">Key Features</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {project.features.map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-[#00FFD1] rounded-full"></div>
+                      <span className="text-sm text-slate-600">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
                 <div className="text-sm font-semibold text-slate-700 mb-2">Client Testimonial</div>
                 <div className="text-slate-600 italic">{project.testimonial}</div>
