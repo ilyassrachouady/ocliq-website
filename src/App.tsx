@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhatWeDo from './components/WhatWeDo';
@@ -16,6 +17,7 @@ import MobileCTA from './components/MobileCTA';
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <Analytics />
       <Header />
       <Hero />
       <WhatWeDo />
