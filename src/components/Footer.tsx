@@ -54,7 +54,7 @@ const Footer = () => {
               <a href="https://linkedin.com/company/ocliq" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://github.com/ilyassrachouady" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Github className="w-5 h-5" />
               </a>
               <a href="mailto:ocliqagency@gmail.com" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
