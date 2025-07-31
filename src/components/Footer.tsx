@@ -48,16 +48,16 @@ const Footer = () => {
               Premium website design agency creating conversion-optimized websites that drive real business growth.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://x.com/OcliqOfficial" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://linkedin.com/company/ocliq" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="mailto:ocliqagency@gmail.com" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
