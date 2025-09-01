@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import WhyDifferent from './components/WhyDifferent';
 import Pricing from './components/Pricing';
 import About from './components/About';
+import LeadGenerationForm from './components/LeadGenerationForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
@@ -27,6 +28,7 @@ function App() {
       <WhyDifferent />
       <Pricing />
       <About />
+      <LeadGenerationForm />
       <Contact />
       <Footer />
       <MobileCTA />
