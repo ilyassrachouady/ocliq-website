@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, Palette, Code, Rocket } from 'lucide-react';
 
 const Process = () => {
@@ -6,26 +5,22 @@ const Process = () => {
     {
       icon: Search,
       title: 'Analyze',
-      description: 'We conduct a comprehensive analysis of your current website, identifying conversion bottlenecks and growth opportunities.',
-      details: ['Website performance audit', 'User experience review', 'Competitor analysis', 'Conversion tracking setup']
+      description: 'Audit your website to identify conversion bottlenecks.'
     },
     {
       icon: Palette,
       title: 'Strategy',
-      description: 'Based on our analysis, we create a custom strategy and design concepts that align with your brand and business goals.',
-      details: ['Custom design concepts', 'Brand alignment', 'UX optimization', 'Mobile-first approach']
+      description: 'Create custom design concepts aligned with your brand.'
     },
     {
       icon: Code,
       title: 'Build',
-      description: 'We redesign and develop your website using proven technologies, ensuring fast loading times and seamless functionality.',
-      details: ['Custom development', 'Performance optimization', 'SEO implementation', 'Quality assurance']
+      description: 'Develop your website with proven technologies.'
     },
     {
       icon: Rocket,
       title: 'Launch & Optimize',
-      description: 'We launch your optimized website and provide ongoing support to ensure continuous improvement and growth.',
-      details: ['Seamless launch', 'Analytics integration', 'Performance monitoring', 'Ongoing optimization']
+      description: 'Deploy and continuously improve based on real data.'
     }
   ];
 
@@ -66,18 +61,9 @@ const Process = () => {
                   {step.title}
                 </h3>
                 
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   {step.description}
                 </p>
-                
-                <ul className="space-y-2 text-left">
-                  {step.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="flex items-center text-sm text-slate-500">
-                      <div className="w-1.5 h-1.5 bg-[#00FFD1] rounded-full mr-3"></div>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           ))}
