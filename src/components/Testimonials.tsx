@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   const testimonials = [
+
+    {
+      name: 'Erik Snow',
+      role: 'Founder',
+      company: 'PursueU',
+      quote: 'The design exceeded our expectations. Ocliq created an intuitive platform that perfectly captures our vision for personalized education matching.',
+      rating: 5
+    },
+    {
+      name: 'Emma Brown',
+      role: 'Operations Manager',
+      company: 'Kratom Online',
+      quote: 'The e-commerce platform Ocliq built is exactly what we needed - professional, secure, and easy to manage. Our online sales have grown substantially since launch.',
+      rating: 5
+    },
+    {
+      name: 'David Martinez',
+      role: 'Founder & CEO',
+      company: 'TechFlow Solutions',
+      quote: 'Outstanding work! Ocliq not only delivered on time but exceeded all our expectations. The website is fast, responsive, and our conversion rates have doubled since launch.',
+      rating: 5
+    },
     {
       name: 'Pearline Anderson',
       role: 'Founder',
@@ -26,27 +49,7 @@ const Testimonials = () => {
       quote: 'Thank you, Ocliq team, for the great service and excellent work. I hope we can collaborate again in the future.',
       rating: 5
     },
-    {
-      name: 'Erik Snow',
-      role: 'Founder',
-      company: 'PursueU',
-      quote: 'The design exceeded our expectations. Ocliq created an intuitive platform that perfectly captures our vision for personalized education matching.',
-      rating: 5
-    },
-    {
-      name: 'Emma Brown',
-      role: 'Operations Manager',
-      company: 'KratomOnline.ca',
-      quote: 'The e-commerce platform Ocliq built is exactly what we needed - professional, secure, and easy to manage. Our online sales have grown substantially since launch.',
-      rating: 5
-    },
-    {
-      name: 'David Martinez',
-      role: 'Founder & CEO',
-      company: 'TechFlow Solutions',
-      quote: 'Outstanding work! Ocliq not only delivered on time but exceeded all our expectations. The website is fast, responsive, and our conversion rates have doubled since launch.',
-      rating: 5
-    }
+    
   ];
 
   const nextSlide = () => {
@@ -64,6 +67,17 @@ const Testimonials = () => {
     return testimonials.slice(startIndex, startIndex + 3);
   };
 
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 3));
+      }, 5000); // Change slide every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, testimonials.length]);
+
   return (
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
@@ -80,6 +94,8 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-slate-50 transition-all duration-300 hover:scale-110 border border-slate-200"
             aria-label="Previous testimonials"
           >
@@ -88,6 +104,8 @@ const Testimonials = () => {
 
           <button
             onClick={nextSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-slate-50 transition-all duration-300 hover:scale-110 border border-slate-200"
             aria-label="Next testimonials"
           >
@@ -95,7 +113,11 @@ const Testimonials = () => {
           </button>
 
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {getVisibleTestimonials().map((testimonial, index) => (
               <div 
                 key={index}
@@ -121,7 +143,7 @@ const Testimonials = () => {
                   <div>
                     <div className="font-semibold text-slate-900">{testimonial.name}</div>
                     <div className="text-sm text-slate-500">{testimonial.role}</div>
-                    <div className="text-sm font-medium text-[#00FFD1]">{testimonial.company}</div>
+                    <div className="text-sm font-medium text-[#e8f7fc]">{testimonial.company}</div>
                   </div>
                 </div>
                 

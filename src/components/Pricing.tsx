@@ -53,7 +53,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Services Summary */}
+        {/* Services Summary
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
           <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-6 sm:mb-8">
             Our Core Services
@@ -70,7 +70,7 @@ const Pricing = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
