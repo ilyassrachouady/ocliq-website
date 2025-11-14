@@ -7,9 +7,9 @@ import WhatWeDo from './components/WhatWeDo';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
-import WhyDifferent from './components/WhyDifferent';
+// import WhyDifferent from './components/WhyDifferent';
 import Pricing from './components/Pricing';
-import About from './components/About';
+// import About from './components/About';
 import LeadGenerationForm from './components/LeadGenerationForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -25,9 +25,9 @@ function App() {
       <Process />
       <Portfolio />
       <Testimonials />
-      <WhyDifferent />
+      {/* <WhyDifferent /> */}
       <Pricing />
-      <About />
+      {/* <About /> */}
       <LeadGenerationForm />
       <Contact />
       <Footer />

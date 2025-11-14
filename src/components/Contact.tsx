@@ -1,31 +1,31 @@
 import React, { useEffect } from 'react';
-import { Mail, MapPin } from 'lucide-react';
+// import { Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const faqs = [
-    {
-      question: 'How long does a typical project take?',
-      answer: 'Most projects are delivered in 4-6 weeks, significantly faster than traditional agencies thanks to our AI-powered process.'
-    },
-    {
-      question: 'Do you work with small businesses?',
-      answer: 'Absolutely! Our Essentials plan is designed specifically for startups and small businesses looking to establish a strong digital presence.'
-    },
-    {
-      question: 'What makes your AI approach different?',
-      answer: 'Our AI analyzes 10,000+ high-converting websites to inform design decisions, then continuously optimizes based on your specific user data.'
-    },
-    {
-      question: 'Do you provide ongoing support?',
-      answer: 'Yes, all plans include support ranging from 30 days to 1 year, plus optional maintenance packages for long-term partnerships.'
-    }
-  ];
+  // const faqs = [
+  //   {
+  //     question: 'How long does a typical project take?',
+  //     answer: 'Most projects are delivered in 4-6 weeks, significantly faster than traditional agencies thanks to our AI-powered process.'
+  //   },
+  //   {
+  //     question: 'Do you work with small businesses?',
+  //     answer: 'Absolutely! Our Essentials plan is designed specifically for startups and small businesses looking to establish a strong digital presence.'
+  //   },
+  //   {
+  //     question: 'What makes your AI approach different?',
+  //     answer: 'Our AI analyzes 10,000+ high-converting websites to inform design decisions, then continuously optimizes based on your specific user data.'
+  //   },
+  //   {
+  //     question: 'Do you provide ongoing support?',
+  //     answer: 'Yes, all plans include support ranging from 30 days to 1 year, plus optional maintenance packages for long-term partnerships.'
+  //   }
+  // ];
 
   return (
     <section id="contact" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
         {/* Contact Information */}
-        <div className="max-w-2xl mx-auto text-center">
+        {/* <div className="max-w-2xl mx-auto text-center">
           <h2 className="heading-lg font-bold text-slate-900 mb-8">Get in Touch</h2>
           
           <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-slate-200 mb-8">
@@ -54,7 +54,7 @@ const Contact = () => {
           </div>
           
           {/* FAQ */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Frequently Asked Questions</h3>
             <div className="space-y-4 text-left max-w-xl mx-auto">
               {faqs.map((faq, index) => (
@@ -70,7 +70,7 @@ const Contact = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
