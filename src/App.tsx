@@ -7,11 +7,12 @@ import WhatWeDo from './components/WhatWeDo';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
+import TrustedCompanies from './components/TrustedCompanies';
 // import WhyDifferent from './components/WhyDifferent';
 import Pricing from './components/Pricing';
-// import About from './components/About';
+import About from './components/About';
 import LeadGenerationForm from './components/LeadGenerationForm';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
 
@@ -23,13 +24,14 @@ function App() {
       <Hero />
       <WhatWeDo />
       <Process />
+      <Pricing />
       <Portfolio />
       <Testimonials />
       {/* <WhyDifferent /> */}
-      <Pricing />
-      {/* <About /> */}
+      {<About />}
       <LeadGenerationForm />
-      <Contact />
+      {/* <Contact /> */}
+      <TrustedCompanies />
       <Footer />
       <MobileCTA />
     </div>

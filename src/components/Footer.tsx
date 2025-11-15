@@ -57,7 +57,7 @@ const Footer = () => {
               <a href="https://github.com/ilyassrachouady" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="mailto:ocliqagency@gmail.com" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="mailto:contact@ocliq.com" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -84,12 +84,21 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 text-slate-400">
-              <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">Contact</button></li>
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+            <h4 className="font-semibold mb-4">Contact Info</h4>
+            <ul className="space-y-3 text-slate-400">
+              <li className="flex items-start space-x-2">
+                <Mail className="w-4 h-4 mt-1 flex-shrink-0 text-[#00FFD1]" />
+                <a href="mailto:contact@ocliq.com" className="hover:text-white transition-colors">
+                  contact@ocliq.com
+                </a>
+              </li>
+              <li className="flex items-start space-x-2">
+                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>San Francisco, CA</span>
+              </li>
             </ul>
           </div>
         </div>
