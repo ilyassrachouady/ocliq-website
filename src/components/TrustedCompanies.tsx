@@ -1,6 +1,6 @@
 import React from 'react';
-import sunGrenslogo from '../assets/logos/sun-greens.png';
-import inteaLogo from '../assets/logos/intea-arabia.png';
+import sunGrenslogo from '../assets/logos/sun-logo.png';
+import inteaLogo from '../assets/logos/intea-logo.png';
 const TrustedCompanies = () => {
   const companies = [
     {
