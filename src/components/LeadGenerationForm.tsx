@@ -107,7 +107,7 @@ const LeadGenerationForm = () => {
 
   if (submitStatus === 'success') {
     return (
-      <section className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
+      <section id="leadform" className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
         <div className="max-w-4xl mx-auto container-padding text-center">
           <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl border border-slate-200">
             <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -148,7 +148,7 @@ const LeadGenerationForm = () => {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
+    <section id="leadform" className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
       <div className="max-w-4xl mx-auto container-padding">
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center space-x-2 bg-[#00FFD1]/10 px-4 py-2 rounded-full mb-6">
