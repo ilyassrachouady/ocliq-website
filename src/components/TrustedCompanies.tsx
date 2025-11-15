@@ -53,18 +53,21 @@ const TrustedCompanies = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Trusted by industry leaders who refuse to settle for average.
+            Trusted by Businesses That Demand{' '}
+            <span className="bg-gradient-to-r from-[#00FFD1] to-blue-400 bg-clip-text text-transparent">
+              Excellence
+            </span>
           </h2>
           
           <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            From SaaS unicorns to Fortune 500 enterprises, we've engineered platforms that drive over $180M in annual revenue.
+            These are just a few of the amazing clients we've helped transform their digital presence. From e-commerce to professional services, we deliver results that matter.
           </p>
         </div>
 
         {/* Companies Logos */}
         <div className="mb-12">
           <p className="text-center text-sm font-semibold text-slate-400 tracking-wider uppercase mb-8">
-            Trusted by Industry Leaders
+            A Few of Our Valued Clients
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
@@ -86,8 +89,8 @@ const TrustedCompanies = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="group bg-[#d4a574] text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-[#c49563] transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
-            <span>Transform My Website</span>
+          <button className="group bg-[#00FFD1] text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-[#00FFD1]/90 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2 shadow-xl hover:shadow-[#00FFD1]/50">
+            <span>🚀 Start Your Transformation</span>
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
@@ -104,7 +107,7 @@ const TrustedCompanies = () => {
           </button>
           
           <p className="text-slate-400 mt-6 text-sm">
-            Join 200+ companies that chose excellence over average
+            Join these successful businesses and 200+ others who chose quality over mediocrity
           </p>
         </div>
       </div>
