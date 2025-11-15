@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import ShimmerButton from './ShimmerButton';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -75,13 +76,15 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6 mb-12 sm:mb-14 lg:mb-16">
-            <button
+            <ShimmerButton
               onClick={() => scrollToSection('website-analysis')}
-              className="group bg-slate-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-slate-800 transition-all duration-300 hover:scale-105 flex items-center space-x-2 w-full sm:w-auto"
+              className="w-full sm:w-auto rounded-full font-semibold flex items-center space-x-2"
+              background="rgba(17,24,39,1)"
+              borderRadius="999px"
             >
-              <span className="text-sm sm:text-base">Get Your Free Website Analysis</span>
+              <span className="text-sm sm:text-base">Get Your Free Website Mockup</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </ShimmerButton>
             <button
               onClick={() => scrollToSection('portfolio')}
               className="text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border-2 border-slate-200 hover:border-slate-300 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-sm sm:text-base"
@@ -91,51 +94,6 @@ const Hero = () => {
           </div>
           
           {/* Trust badges */}
-          <div className="opacity-60">
-            <p className="text-sm text-slate-500 mb-6 uppercase tracking-wider font-medium">Trusted by companies like</p>
-            <div className="flex items-center justify-center space-x-6 sm:space-x-8 flex-wrap gap-y-4">
-              <a
-                href="https://preptiq.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                Preptiq
-              </a>
-              <a
-                href="https://pursueu.enrolla.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                PursueU
-              </a>
-              <a
-                href="https://propbolt.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                PropBolt
-              </a>
-              <a
-                href="https://lemayconsulting.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                LemayConsulting
-              </a>
-              <a
-                href="https://kratomonline.ca/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-bold text-slate-400 hover:text-slate-600 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                KratomOnline.ca
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

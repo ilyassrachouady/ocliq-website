@@ -13,7 +13,7 @@ const TrustedCompanies = () => {
     },
     {
       name: 'toitures lv',
-      logo: 'https://ibb.co/99XZ7NSH',
+      logo: 'https://i.ibb.co/5WDKP6wh/Toitures-LV-Rouge.png',
       alt: 'toitureslv Logo'
     },
     {
