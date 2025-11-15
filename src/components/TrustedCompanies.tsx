@@ -1,6 +1,4 @@
 import React from 'react';
-import sunGrenslogo from '../assets/logos/sun-greens.png';
-import inteaLogo from '../assets/logos/intea-arabia.png';
 const TrustedCompanies = () => {
   const companies = [
     {
@@ -15,7 +13,7 @@ const TrustedCompanies = () => {
     },
     {
       name: 'Sun Greens',
-      logo: sunGrenslogo,
+      logo: '/sun-logo.png',
       alt: 'Sun Greens Logo'
     },
     {
@@ -25,7 +23,7 @@ const TrustedCompanies = () => {
     },
     {
       name: 'Intea Arabia',
-      logo: inteaLogo,
+      logo: '/intea-logo.png',
       alt: 'Intea Arabia Logo'
     },
     {
