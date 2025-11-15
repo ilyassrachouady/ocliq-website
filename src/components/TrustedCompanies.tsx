@@ -89,8 +89,8 @@ const TrustedCompanies = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="group bg-[#00FFD1] text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-[#00FFD1]/90 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2 shadow-xl hover:shadow-[#00FFD1]/50">
-            <span>🚀 Start Your Transformation</span>
+          <button className="group bg-[#d4a574] text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-[#c49563] transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
+            <span>Transform My Website</span>
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
@@ -107,7 +107,7 @@ const TrustedCompanies = () => {
           </button>
           
           <p className="text-slate-400 mt-6 text-sm">
-            Join these successful businesses and 200+ others who chose quality over mediocrity
+            Join 200+ companies that chose excellence over average
           </p>
         </div>
       </div>
