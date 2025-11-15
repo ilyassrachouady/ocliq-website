@@ -35,10 +35,25 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
 
-      {/* Animated background elements */}
+      {/* Modern Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#00FFD1]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Floating gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#00FFD1]/20 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-400/15 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+        
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-[#00FFD1] rounded-full animate-float"></div>
+        <div className="absolute top-1/2 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-float animation-delay-1000"></div>
+        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-float animation-delay-2000"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#00FFD1] rounded-full animate-float animation-delay-3000"></div>
+        
+        {/* Gradient beams */}
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#00FFD1]/20 to-transparent animate-beam"></div>
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent animate-beam animation-delay-2000"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto container-padding text-center" ref={heroRef}>

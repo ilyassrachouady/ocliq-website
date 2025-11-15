@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto container-padding">
         {/* Final CTA Section */}
-        <div className="py-12 sm:py-16 text-center border-b border-slate-800">
+        {/* <div className="py-12 sm:py-16 text-center border-b border-slate-800">
           <h2 className="heading-md font-bold mb-4 sm:mb-6">
             You're one click away from an intelligent website{' '}
             <span className="bg-gradient-to-r from-[#00FFD1] to-blue-400 bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ const Footer = () => {
               Book Discovery Call
             </button>
           </div>
-        </div>
+        </div> */}
         
         {/* Footer Content */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
