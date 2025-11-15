@@ -1,5 +1,6 @@
 import React from 'react';
-
+import sunGrenslogo from '../assets/logos/sun-greens.png';
+import inteaLogo from '../assets/logos/intea-arabia.png';
 const TrustedCompanies = () => {
   const companies = [
     {
@@ -14,7 +15,7 @@ const TrustedCompanies = () => {
     },
     {
       name: 'Sun Greens',
-      logo: 'https://sun-greens.com/wp-content/uploads/2024/03/cropped-sungreens-300x300.png',
+      logo: sunGrenslogo,
       alt: 'Sun Greens Logo'
     },
     {
@@ -24,7 +25,7 @@ const TrustedCompanies = () => {
     },
     {
       name: 'Intea Arabia',
-      logo: 'https://inteaarabia.com/wp-content/uploads/2024/07/New-Project-2.png',
+      logo: inteaLogo,
       alt: 'Intea Arabia Logo'
     },
     {
