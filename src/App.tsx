@@ -7,6 +7,7 @@ import WhatWeDo from './components/WhatWeDo';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
+import Testimonialsv2 from './components/Testimonialsv2';
 import TrustedCompanies from './components/TrustedCompanies';
 // import WhyDifferent from './components/WhyDifferent';
 import Pricing from './components/Pricing';
@@ -27,6 +28,7 @@ function App() {
       <Pricing />
       <Portfolio />
       <Testimonials />
+      <Testimonialsv2 />
       {/* <WhyDifferent /> */}
       {<About />}
       <LeadGenerationForm />

@@ -143,7 +143,7 @@ const Testimonials = () => {
                   <div>
                     <div className="font-semibold text-slate-900">{testimonial.name}</div>
                     <div className="text-sm text-slate-500">{testimonial.role}</div>
-                    <div className="text-sm font-medium text-[#e8f7fc]">{testimonial.company}</div>
+                    <div className="text-sm font-medium text-[#a0a6af]">{testimonial.company}</div>
                   </div>
                 </div>
                 

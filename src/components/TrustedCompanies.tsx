@@ -87,7 +87,7 @@ const TrustedCompanies = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="group bg-[#00FFD1] text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-[#c49563] transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
+          <button className="group bg-[#00FFD1] text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-[#ffff] transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
             <span>Transform My Website</span>
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
