@@ -1,7 +1,7 @@
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import Herov2 from './components/Herov2';
 import WhatWeDo from './components/WhatWeDo';
 
 import Process from './components/Process';
@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Analytics />
+      <Herov2 />
       <Header />
-      <Hero />
       <WhatWeDo />
       <Process />
       <Pricing />
