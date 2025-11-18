@@ -1,5 +1,30 @@
-import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 const TrustedCompanies = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
   const companies = [
     {
       name: 'Kratom Online',
@@ -34,10 +59,15 @@ const TrustedCompanies = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#0f172a]">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto container-padding relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="flex justify-center mb-6">
             {[...Array(5)].map((_, index) => (
               <svg
@@ -50,21 +80,21 @@ const TrustedCompanies = () => {
             ))}
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
             Trusted by Businesses That Demand{' '}
-            <span className="bg-gradient-to-r from-[#00FFD1] to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#152e56] via-[#2a96e8] to-white bg-clip-text text-transparent" style={{ textShadow: 'none' }}>
               Excellence
             </span>
           </h2>
           
-          <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed">
             These are just a few of the amazing clients we've helped transform their digital presence. From e-commerce to professional services, we deliver results that matter.
           </p>
         </div>
 
         {/* Companies Logos */}
-        <div className="mb-12">
-          <p className="text-center text-sm font-semibold text-slate-400 tracking-wider uppercase mb-8">
+        <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
+          <p className="text-center text-sm font-semibold text-white/60 tracking-wider uppercase mb-8">
             A Few of Our Valued Clients
           </p>
           
@@ -72,7 +102,13 @@ const TrustedCompanies = () => {
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-4 group"
+                className="flex items-center justify-center p-4 group rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
               >
                 <img
                   src={company.logo}
@@ -86,8 +122,10 @@ const TrustedCompanies = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
-          <button className="group bg-[#00FFD1] text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-[#ffff] transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
+        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
+          <button className="group text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2" style={{
+            background: 'linear-gradient(135deg, #152e56, #2a96e8, white)'
+          }}>
             <span>Transform My Website</span>
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -104,7 +142,7 @@ const TrustedCompanies = () => {
             </svg>
           </button>
           
-          <p className="text-slate-400 mt-6 text-sm">
+          <p className="text-white/60 mt-6 text-sm">
             Join 200+ companies that chose excellence over average
           </p>
         </div>

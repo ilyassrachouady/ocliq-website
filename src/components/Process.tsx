@@ -123,7 +123,7 @@ const Process = () => {
       
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
+          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
             Our Process
           </h2>
           <p className="text-responsive text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
@@ -163,15 +163,15 @@ const Process = () => {
               >
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden flex-shrink-0"
                   style={{
-                    background: 'rgba(0, 51, 255, 0.1)',
-                    border: '1px solid rgba(0, 51, 255, 0.2)'
+                    background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
+                    border: '1px solid rgba(42, 150, 232, 0.3)'
                   }}
                 >
                   {/* Wave animation effect */}
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{
-                      background: 'linear-gradient(90deg, transparent, rgba(0, 51, 255, 0.4), transparent)',
+                      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)',
                       animation: 'wave 2s ease-in-out infinite',
                     }}
                   />
@@ -188,7 +188,7 @@ const Process = () => {
                   `
                 }} />
                 
-                <div className="text-sm font-semibold text-[#0033ff] mb-2 sm:mb-3">
+                <div className="text-sm font-semibold mb-2 sm:mb-3" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8, white)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Step {index + 1}
                 </div>
                 

@@ -5,8 +5,7 @@ import Herov2 from './components/Herov2';
 import WhatWeDo from './components/WhatWeDo';
 
 import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
+// import Portfolio from './components/Portfolio';
 import Testimonialsv2 from './components/Testimonialsv2';
 import TrustedCompanies from './components/TrustedCompanies';
 // import WhyDifferent from './components/WhyDifferent';
@@ -26,8 +25,7 @@ function App() {
       <WhatWeDo />
       <Process />
       <Pricing />
-      <Portfolio />
-      <Testimonials />
+      {/* <Portfolio /> */}
       <Testimonialsv2 />
       {/* <WhyDifferent /> */}
       {<About />}
