@@ -26,7 +26,8 @@ export const TestimonialsColumn = (props: {
           ease: "linear",
           repeatType: "loop",
         }}
-        className="flex flex-col gap-6 pb-6 bg-background"
+        className="flex flex-col gap-6 pb-6"
+        style={{ background: 'transparent' }}
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
@@ -40,17 +41,31 @@ export const TestimonialsColumn = (props: {
                   .toUpperCase();
 
                 return (
-                  <div className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full" key={i}>
-                    <div className="text-slate-700 italic">"{quote}"</div>
+                  <div className="p-10 rounded-3xl max-w-xs w-full" 
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(15px)',
+                      WebkitBackdropFilter: 'blur(15px)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }}
+                    key={i}
+                  >
+                    <div className="text-white/80 italic">"{quote}"</div>
                     <div className="flex items-center gap-3 mt-5">
                       <div className="flex-shrink-0">
-                        <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-sm font-semibold text-slate-700">
+                        <div className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold text-white"
+                          style={{
+                            background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
+                            border: '1px solid rgba(42, 150, 232, 0.3)'
+                          }}
+                        >
                           {initials}
                         </div>
                       </div>
                       <div className="flex flex-col text-left">
-                        <div className="font-medium tracking-tight leading-5">{name}</div>
-                        <div className="leading-5 opacity-60 tracking-tight text-sm">{role}{company ? ` • ${company}` : ''}</div>
+                        <div className="font-medium tracking-tight leading-5 text-white">{name}</div>
+                        <div className="leading-5 text-white/60 tracking-tight text-sm">{role}{company ? ` • ${company}` : ''}</div>
                       </div>
                     </div>
                     {typeof rating === 'number' && (

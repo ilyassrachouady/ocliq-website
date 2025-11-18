@@ -10,8 +10,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto container-padding">
+    <footer className="relative overflow-hidden" style={{ background: '#000000' }}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto container-padding relative z-10">
         {/* Final CTA Section */}
         {/* <div className="py-12 sm:py-16 text-center border-b border-slate-800">
           <h2 className="heading-md font-bold mb-4 sm:mb-6">
@@ -43,29 +48,29 @@ const Footer = () => {
         {/* Footer Content */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="text-2xl font-bold mb-4">Ocliq</div>
-            <p className="text-slate-400 mb-6">
+            <div className="text-2xl font-bold mb-4 text-white">Ocliq</div>
+            <p className="text-white/60 mb-6">
               Premium website design agency creating conversion-optimized websites that drive real business growth.
             </p>
             <div className="flex space-x-4">
-              <a href="https://x.com/OcliqOfficial" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://x.com/OcliqOfficial" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com/company/ocliq" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://linkedin.com/company/ocliq" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://github.com/ilyassrachouady" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="https://github.com/ilyassrachouady" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="mailto:contact@ocliq.com" className="text-slate-400 hover:text-[#00FFD1] transition-colors">
+              <a href="mailto:contact@ocliq.com" className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-slate-400">
+            <h4 className="font-semibold mb-4 text-white">Services</h4>
+            <ul className="space-y-2 text-white/60">
               <li><a href="#" className="hover:text-white transition-colors">Website Design</a></li>
               <li><a href="#" className="hover:text-white transition-colors">E-commerce</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Web Applications</a></li>
@@ -74,8 +79,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-slate-400">
+            <h4 className="font-semibold mb-4 text-white">Company</h4>
+            <ul className="space-y-2 text-white/60">
               <li><button onClick={() => scrollToSection('portfolio')} className="hover:text-white transition-colors">Portfolio</button></li>
               <li><button onClick={() => scrollToSection('process')} className="hover:text-white transition-colors">Process</button></li>
               <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
@@ -84,19 +89,23 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-3 text-slate-400">
+            <h4 className="font-semibold mb-4 text-white">Contact Info</h4>
+            <ul className="space-y-3 text-white/60">
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 mt-1 flex-shrink-0 text-[#00FFD1]" />
+                <div className="w-4 h-4 mt-1 flex-shrink-0 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}>
+                  <Mail className="w-2.5 h-2.5 text-white" />
+                </div>
                 <a href="mailto:contact@ocliq.com" className="hover:text-white transition-colors">
                   contact@ocliq.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                <div className="w-4 h-4 mt-1 flex-shrink-0 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}>
+                  <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
                 <span>San Francisco, CA</span>
               </li>
             </ul>
@@ -104,11 +113,11 @@ const Footer = () => {
         </div>
         
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-slate-400 text-sm mb-4 md:mb-0">
+        <div className="py-6 flex flex-col md:flex-row justify-between items-center" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+          <div className="text-white/60 text-sm mb-4 md:mb-0">
             © 2025 Ocliq. All rights reserved.
           </div>
-          <div className="text-slate-400 text-sm">
+          <div className="text-white/60 text-sm">
             Made with ❤️ by Ocliq Team
           </div>
         </div>

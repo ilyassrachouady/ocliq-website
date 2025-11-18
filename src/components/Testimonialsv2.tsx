@@ -1,5 +1,5 @@
 import { TestimonialsColumn } from "./ui/testimonials-columns-1";
-import { motion } from "motion/react";
+import { useEffect, useRef, useState } from 'react';
 
 const testimonials = [
   {
@@ -74,28 +74,56 @@ const thirdColumn = testimonials.slice(6, 9);
 
 
 const Testimonials = () => {
-  return (
-    <section className="bg-background my-20 relative">
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-      <div className="container z-10 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
-        >
-          <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto container-padding relative z-10">
+        <div className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center px-4 py-2 rounded-full mb-6"
+            style={{
+              background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
+              border: '1px solid rgba(42, 150, 232, 0.3)'
+            }}
+          >
+            <span className="text-sm font-medium text-white">Testimonials</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
+          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
             What our users say
           </h2>
-          <p className="text-center mt-5 opacity-75">
+          <p className="text-responsive text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             See what our customers have to say about us.
           </p>
-        </motion.div>
+        </div>
 
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />

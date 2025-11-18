@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 import { supabase, type Lead } from '../lib/supabase';
 
@@ -13,6 +13,30 @@ const LeadGenerationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -107,36 +131,52 @@ const LeadGenerationForm = () => {
 
   if (submitStatus === 'success') {
     return (
-      <section id="leadform" className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
-        <div className="max-w-4xl mx-auto container-padding text-center">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl border border-slate-200">
-            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+      <section ref={sectionRef} id="leadform" className="section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-4xl mx-auto container-padding text-center relative z-10">
+          <div className="rounded-3xl p-8 sm:p-12 lg:p-16" style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          }}>
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{
+              background: 'linear-gradient(135deg, #152e56, #2a96e8, white)'
+            }}>
               <CheckCircle className="w-10 h-10 text-white" />
             </div>
             
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Thank You! 🎉
             </h3>
             
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <p className="text-lg text-white/80 mb-6 leading-relaxed">
               Your request has been submitted successfully. We'll create your custom website mockup and send it to your email within 24 hours.
             </p>
             
-            <div className="bg-gradient-to-r from-[#00FFD1]/10 to-blue-500/10 rounded-xl p-6">
-              <p className="text-slate-700 font-medium">
+            <div className="rounded-xl p-6" style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}>
+              <p className="text-white font-medium">
                 What happens next:
               </p>
-              <ul className="text-left text-slate-600 mt-3 space-y-2">
+              <ul className="text-left text-white/70 mt-3 space-y-2">
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#00FFD1] rounded-full"></div>
+                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
                   <span>We'll analyze your current website or project idea</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#00FFD1] rounded-full"></div>
+                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
                   <span>Create a custom mockup design tailored to your business</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#00FFD1] rounded-full"></div>
+                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
                   <span>Send you the mockup with improvement recommendations</span>
                 </li>
               </ul>
@@ -148,31 +188,46 @@ const LeadGenerationForm = () => {
   }
 
   return (
-    <section id="leadform" className="section-padding bg-gradient-to-br from-[#00FFD1]/5 to-blue-50">
-      <div className="max-w-4xl mx-auto container-padding">
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center space-x-2 bg-[#00FFD1]/10 px-4 py-2 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-[#00FFD1] animate-pulse" />
-            <span className="text-sm font-medium text-slate-700">Free Custom Mockup</span>
+    <section ref={sectionRef} id="leadform" className="section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-4xl mx-auto container-padding relative z-10">
+        <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6" style={{
+            background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
+            border: '1px solid rgba(42, 150, 232, 0.3)'
+          }}>
+            <Sparkles className="w-4 h-4 text-white animate-pulse" />
+            <span className="text-sm font-medium text-white">Free Custom Mockup</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
             Get Your Free Website{' '}
-            <span className="bg-gradient-to-r from-[#00FFD1] to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#152e56] via-[#2a96e8] to-white bg-clip-text text-transparent" style={{ textShadow: 'none' }}>
               Mockup Design
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             See exactly how your website could look with our proven design approach. We'll create a custom mockup showing your business with high-converting design elements, modern chatbots, and operational automations.
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-200">
+        <div className={`rounded-3xl p-8 sm:p-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+          background: 'rgba(255, 255, 255, 0.08)',
+          backdropFilter: 'blur(15px)',
+          WebkitBackdropFilter: 'blur(15px)',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+          boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+          transitionDelay: '0.2s'
+        }}>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Full Name */}
             <div>
-              <label htmlFor="full_name" className="block text-sm font-semibold text-slate-900 mb-2">
+              <label htmlFor="full_name" className="block text-sm font-semibold text-white mb-2">
                 Full Name *
               </label>
               <input
@@ -182,10 +237,15 @@ const LeadGenerationForm = () => {
                 value={formData.full_name}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className={`w-full px-6 py-4 rounded-full border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00FFD1]/20 ${
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: errors.full_name ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
+                  color: 'white'
+                }}
+                className={`w-full px-6 py-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
                   errors.full_name 
-                    ? 'border-red-300 focus:border-red-500' 
-                    : 'border-slate-200 focus:border-[#00FFD1]'
+                    ? 'focus:ring-red-500/20 focus:border-red-500' 
+                    : 'focus:ring-blue-500/20 focus:border-blue-500'
                 }`}
                 required
               />
@@ -199,7 +259,7 @@ const LeadGenerationForm = () => {
 
             {/* Phone Number */}
             <div>
-              <label htmlFor="phone_number" className="block text-sm font-semibold text-slate-900 mb-2">
+              <label htmlFor="phone_number" className="block text-sm font-semibold text-white mb-2">
                 Phone Number *
               </label>
               <input
@@ -209,10 +269,15 @@ const LeadGenerationForm = () => {
                 value={formData.phone_number}
                 onChange={handleChange}
                 placeholder="Enter your phone number"
-                className={`w-full px-6 py-4 rounded-full border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00FFD1]/20 ${
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: errors.phone_number ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
+                  color: 'white'
+                }}
+                className={`w-full px-6 py-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
                   errors.phone_number 
-                    ? 'border-red-300 focus:border-red-500' 
-                    : 'border-slate-200 focus:border-[#00FFD1]'
+                    ? 'focus:ring-red-500/20 focus:border-red-500' 
+                    : 'focus:ring-blue-500/20 focus:border-blue-500'
                 }`}
                 required
               />
@@ -226,7 +291,7 @@ const LeadGenerationForm = () => {
 
             {/* Email Address */}
             <div>
-              <label htmlFor="email_address" className="block text-sm font-semibold text-slate-900 mb-2">
+              <label htmlFor="email_address" className="block text-sm font-semibold text-white mb-2">
                 Email Address *
               </label>
               <input
@@ -236,10 +301,15 @@ const LeadGenerationForm = () => {
                 value={formData.email_address}
                 onChange={handleChange}
                 placeholder="Enter your email address"
-                className={`w-full px-6 py-4 rounded-full border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00FFD1]/20 ${
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: errors.email_address ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
+                  color: 'white'
+                }}
+                className={`w-full px-6 py-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
                   errors.email_address 
-                    ? 'border-red-300 focus:border-red-500' 
-                    : 'border-slate-200 focus:border-[#00FFD1]'
+                    ? 'focus:ring-red-500/20 focus:border-red-500' 
+                    : 'focus:ring-blue-500/20 focus:border-blue-500'
                 }`}
                 required
               />
@@ -253,7 +323,7 @@ const LeadGenerationForm = () => {
 
             {/* Business Website / Project Idea */}
             <div>
-              <label htmlFor="business_info" className="block text-sm font-semibold text-slate-900 mb-2">
+              <label htmlFor="business_info" className="block text-sm font-semibold text-white mb-2">
                 Business Website / Project Idea
               </label>
               <textarea
@@ -263,9 +333,14 @@ const LeadGenerationForm = () => {
                 onChange={handleChange}
                 placeholder="Tell us about your current website or project idea. What industry are you in? What are your main goals? (This helps us create a more targeted mockup for you)"
                 rows={4}
-                className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-[#00FFD1] focus:outline-none focus:ring-2 focus:ring-[#00FFD1]/20 transition-all duration-300 resize-none"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  color: 'white'
+                }}
+                className="w-full px-6 py-4 rounded-2xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none placeholder:text-white/40"
               />
-              <p className="text-xs text-slate-500 mt-2">
+              <p className="text-xs text-white/50 mt-2">
                 Optional, but recommended for a more personalized mockup
               </p>
             </div>
@@ -275,7 +350,10 @@ const LeadGenerationForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group w-full bg-slate-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-800 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                style={{
+                  background: 'linear-gradient(135deg, #152e56, #2a96e8, white)'
+                }}
+                className="group w-full text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {isSubmitting ? (
                   <>
@@ -297,7 +375,7 @@ const LeadGenerationForm = () => {
                 </div>
               )}
               
-              <p className="text-sm text-slate-500 text-center mt-4">
+              <p className="text-sm text-white/50 text-center mt-4">
                 No spam. We'll send you a custom mockup within 24 hours showing exactly how your website could look with our proven conversion-focused design approach.
               </p>
             </div>
@@ -305,19 +383,34 @@ const LeadGenerationForm = () => {
         </div>
 
         {/* Value Proposition */}
-        <div className="mt-12 text-center">
+        <div className={`mt-12 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl font-bold text-slate-900 mb-2">High-Converting</div>
-              <div className="text-sm text-slate-600">Website designs that turn visitors into customers</div>
+            <div className="p-6 rounded-xl" style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}>
+              <div className="text-2xl font-bold text-white mb-2">High-Converting</div>
+              <div className="text-sm text-white/60">Website designs that turn visitors into customers</div>
             </div>
-            <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl font-bold text-slate-900 mb-2">Smart Chatbots</div>
-              <div className="text-sm text-slate-600">AI-powered customer support and lead qualification</div>
+            <div className="p-6 rounded-xl" style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}>
+              <div className="text-2xl font-bold text-white mb-2">Smart Chatbots</div>
+              <div className="text-sm text-white/60">AI-powered customer support and lead qualification</div>
             </div>
-            <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl font-bold text-slate-900 mb-2">Automation</div>
-              <div className="text-sm text-slate-600">Streamlined operations that save time and money</div>
+            <div className="p-6 rounded-xl" style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}>
+              <div className="text-2xl font-bold text-white mb-2">Automation</div>
+              <div className="text-sm text-white/60">Streamlined operations that save time and money</div>
             </div>
           </div>
         </div>
