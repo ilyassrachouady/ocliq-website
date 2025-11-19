@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Herov2 from './components/Herov2';
-import WhatWeDo from './components/WhatWeDo';
+import SkeletonLoader from './components/SkeletonLoader';
 
-import Process from './components/Process';
-// import Portfolio from './components/Portfolio';
-import Testimonialsv2 from './components/Testimonialsv2';
-import TrustedCompanies from './components/TrustedCompanies';
-// import WhyDifferent from './components/WhyDifferent';
-import Pricing from './components/Pricing';
-import About from './components/About';
-import LeadGenerationForm from './components/LeadGenerationForm';
-// import Contact from './components/Contact';
-import Footer from './components/Footer';
-import MobileCTA from './components/MobileCTA';
+const WhatWeDo = React.lazy(() => import('./components/WhatWeDo'));
+const Process = React.lazy(() => import('./components/Process'));
+const Testimonialsv2 = React.lazy(() => import('./components/Testimonialsv2'));
+const TrustedCompanies = React.lazy(() => import('./components/TrustedCompanies'));
+const Pricing = React.lazy(() => import('./components/Pricing'));
+const About = React.lazy(() => import('./components/About'));
+const LeadGenerationForm = React.lazy(() => import('./components/LeadGenerationForm'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const MobileCTA = React.lazy(() => import('./components/MobileCTA'));
 
 function App() {
   return (
@@ -22,18 +20,17 @@ function App() {
       <Analytics />
       <Herov2 />
       <Header />
-      <WhatWeDo />
-      <Process />
-      <Pricing />
-      {/* <Portfolio /> */}
-      <Testimonialsv2 />
-      {/* <WhyDifferent /> */}
-      {<About />}
-      <LeadGenerationForm />
-      {/* <Contact /> */}
-      <TrustedCompanies />
-      <Footer />
-      <MobileCTA />
+      <Suspense fallback={<SkeletonLoader />}>
+        <WhatWeDo />
+        <Process />
+        <Pricing />
+        <Testimonialsv2 />
+        <About />
+        <LeadGenerationForm />
+        <TrustedCompanies />
+        <Footer />
+        <MobileCTA />
+      </Suspense>
     </div>
   );
 }

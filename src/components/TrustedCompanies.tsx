@@ -48,13 +48,18 @@ const TrustedCompanies = () => {
     },
     {
       name: 'Intea Arabia',
-      logo: '/intea-logo.png',
+      logo: '/images/intea-logo.webp',
       alt: 'Intea Arabia Logo'
     },
     {
       name: 'Pearline',
       logo: 'https://pearline.com/wp-content/uploads/2024/04/Logo.png',
       alt: 'Pearline Logo'
+    },
+    {
+      name: 'Sun Co',
+      logo: '/sun-logo.webp',
+      alt: 'Sun Co Logo'
     }
   ];
 
@@ -115,6 +120,8 @@ const TrustedCompanies = () => {
                   alt={company.alt}
                   className="max-h-16 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   loading="lazy"
+                  width="64"
+                  height="64"
                 />
               </div>
             ))}

@@ -128,3 +128,5 @@ const WebsiteAnalysis = () => {
     </section>
   );
 };
+
+export default WebsiteAnalysis;
