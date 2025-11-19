@@ -51,7 +51,7 @@ const LeadGenerationForm = () => {
     // Phone number validation
     if (!formData.phone_number.trim()) {
       newErrors.phone_number = 'Phone number is required';
-    } else if (!/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone_number.replace(/[\s\-\(\)]/g, ''))) {
+    } else if (!/^[+]?[1-9][\d]{0,15}$/.test(formData.phone_number.replace(/[\s-()]/g, ''))) {
       newErrors.phone_number = 'Please enter a valid phone number';
     }
 

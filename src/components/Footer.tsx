@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
