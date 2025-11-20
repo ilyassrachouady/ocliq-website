@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Twitter, Linkedin, Github, Mail } from 'lucide-react';
 
 const Footer = () => {
@@ -114,10 +115,43 @@ const Footer = () => {
         
         {/* Bottom Bar */}
         <div className="py-6 flex flex-col md:flex-row justify-between items-center" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-          <div className="text-white/60 text-sm mb-4 md:mb-0">
-            © 2025 Ocliq. All rights reserved.
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+            <div className="text-white/60 text-sm">
+              © 2025 Ocliq. All rights reserved.
+            </div>
+            <div className="flex space-x-4 text-white/60 text-sm">
+              <Link 
+                to="/privacy-policy" 
+                className="hover:text-white transition-colors duration-300"
+                onClick={() => {
+                  // Use setTimeout to ensure scroll happens after navigation
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                  }, 0);
+                }}
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-white/30">•</span>
+              <Link 
+                to="/terms-of-service" 
+                className="hover:text-white transition-colors duration-300"
+                onClick={() => {
+                  // Use setTimeout to ensure scroll happens after navigation
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                  }, 0);
+                }}
+              >
+                Terms of Service
+              </Link>
+            </div>
           </div>
-          <div className="text-white/60 text-sm">
+          <div className="text-white/60 text-sm mt-4 md:mt-0">
             Made with ❤️ by Ocliq Team
           </div>
         </div>
