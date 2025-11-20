@@ -57,7 +57,7 @@ const WhatWeDo = () => {
     <section 
       ref={sectionRef} 
       id="services" 
-      className="section-padding relative overflow-hidden" 
+      className="section-spacing section-padding relative overflow-hidden" 
       style={{ background: '#000000' }}
       itemScope 
       itemType="https://schema.org/Organization"
@@ -68,48 +68,27 @@ const WhatWeDo = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
-        <header className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <header className={`text-center mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <h2 
             id="services-heading"
-            className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" 
+            className="heading-lg font-bold text-white mb-6 leading-tight" 
             style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}
             itemProp="name"
           >
             What We Do
           </h2>
-          <p 
-            className="text-xl text-muted max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
-            itemProp="description"
-          >
-            We combine years of technical expertise with proven strategies to deliver digital solutions that drive real business growth.
-          </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`group p-4 sm:p-5 lg:p-6 rounded-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`group bg-gradient-glass p-6 rounded-xl hover-lift ${
+                isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
               style={{
-                background: 'rgba(255, 255, 255, 0.08)',
-                backdropFilter: 'blur(15px)',
-                WebkitBackdropFilter: 'blur(15px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                transitionDelay: `${index * 0.15}s`,
-                boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
-                e.currentTarget.style.border = '1px solid rgba(1, 39, 193, 0.4)';
-                e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(1, 39, 193, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.15)';
-                e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.37)';
+                animationDelay: `${index * 0.1}s`,
               }}
               itemScope 
               itemType="https://schema.org/Service"
@@ -146,14 +125,14 @@ const WhatWeDo = () => {
 
               <h3 
                 id={`service-${index}-title`}
-                className="heading-sm mb-2 sm:mb-3"
+                className="heading-sm mb-var(--spacing-sm)"
                 itemProp="name"
               >
                 {service.title}
               </h3>
 
               <p 
-                className="text-xs sm:text-sm text-muted mb-3 sm:mb-4 leading-relaxed"
+                className="text-caption text-secondary mb-var(--spacing-md)"
                 itemProp="description"
               >
                 {service.description}

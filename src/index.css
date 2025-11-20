@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Consistent Typography System */
+/* Professional Design System */
 @layer base {
-  /* Primary Headings */
+  
+  /* Consistent Spacing Scale */
+  :root {
+    --spacing-xs: 0.5rem;    /* 8px */
+    --spacing-sm: 0.75rem;   /* 12px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+    --spacing-4xl: 6rem;     /* 96px */
+  }
+  
+  /* Professional Typography Hierarchy */
   .heading-xl {
     @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight;
   }
@@ -23,58 +38,47 @@
     @apply text-xl sm:text-2xl font-bold text-white leading-tight;
   }
   
-  /* Body Text - Matching Founders Section */
+  /* Professional Text System */
   .text-primary {
-    @apply text-white font-medium;
+    @apply text-white font-medium leading-relaxed;
   }
   
   .text-secondary {
-    @apply text-white/80 font-normal;
+    @apply text-white/85 font-normal leading-relaxed;
   }
   
   .text-muted {
-    @apply text-white/80 font-normal;
+    @apply text-white/75 font-normal leading-relaxed;
   }
   
   .text-subtle {
-    @apply text-white/60 font-normal;
+    @apply text-white/60 font-normal leading-relaxed;
   }
   
-  /* Founders-style text for descriptions */
-  .text-founders-style {
-    @apply text-white/80 font-normal leading-relaxed;
+  .text-body {
+    @apply text-base sm:text-lg text-white/85 font-normal leading-relaxed;
   }
   
-  /* Navigation Text */
+  .text-caption {
+    @apply text-sm text-white/70 font-normal leading-normal;
+  }
+  
+  /* Professional Navigation */
   .nav-text {
-    @apply text-white/90 font-medium hover:text-white transition-colors duration-300;
+    @apply text-white/90 font-medium hover:text-white transition-colors duration-200;
   }
   
-  /* Gradient Text */
+  /* Clean Gradient System */
   .text-gradient {
-    background: linear-gradient(135deg, #00FFD1 0%, #00a8cc 30%, #0080ff 60%, #0052cc 80%, #0127c1 100%);
+    background: linear-gradient(120deg, #00d4ff 0%, #0099cc 50%, #0066aa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  /* Gradient Backgrounds */
   .bg-gradient-primary {
+    background: linear-gradient(120deg, #00d4ff 0%, #0099cc 50%, #0066aa 100%);
     position: relative;
-    background: linear-gradient(135deg, 
-      rgba(0, 255, 209, 0.8) 0%, 
-      rgba(0, 168, 204, 0.7) 30%, 
-      rgba(0, 128, 255, 0.6) 60%, 
-      rgba(0, 82, 204, 0.7) 80%, 
-      rgba(1, 39, 193, 0.8) 100%
-    );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      0 8px 32px rgba(0, 0, 0, 0.1),
-      0 4px 16px rgba(1, 39, 193, 0.1);
   }
   
   .bg-gradient-primary::before {
@@ -82,40 +86,116 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(
-      135deg, 
-      rgba(255, 255, 255, 0.15) 0%, 
-      rgba(255, 255, 255, 0.05) 50%, 
-      transparent 100%
-    );
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
     opacity: 0.8;
-    transition: all 0.3s ease;
-  }
-  
-  .bg-gradient-primary:hover::before {
-    opacity: 1;
-    background: linear-gradient(
-      135deg, 
-      rgba(255, 255, 255, 0.2) 0%, 
-      rgba(255, 255, 255, 0.08) 50%, 
-      transparent 100%
-    );
   }
   
   .bg-gradient-glass {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
   
-  /* Accent Colors */
-  .text-accent-cyan {
-    @apply text-[#00FFD1];
+  /* Professional Button System */
+  .btn-primary {
+    @apply bg-gradient-primary text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
   }
   
-  .text-accent-blue {
-    @apply text-[#2a96e8];
+  .btn-secondary {
+    @apply bg-gradient-glass text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Consistent Spacing Utilities */
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  
+  .content-spacing {
+    @apply space-y-6 sm:space-y-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Remove default margins */
+  h1, h2, h3, h4, h5, h6, p {
+    @apply m-0;
+  }
+  
+  /* Apple-Level Animation System */
+  .animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-up-delayed {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Apple-style hover animations */
+  .hover-lift {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  button, a, [role="button"] {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 

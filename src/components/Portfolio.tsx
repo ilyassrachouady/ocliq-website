@@ -13,7 +13,7 @@ const Portfolio = () => {
       id: 1,
       title: "Floyd Spence",
       category: "Personal Portfolio",
-      image: "/screencapture-floydspence-framer-website-2025-11-20-20_25_02.png",
+      image: "/screencapture-floydspence-framer-website-2025-11-20-20_25_02.webp",
       result: "+Premium Design",
       url: "https://floydspence.framer.website/",
       description: "Sophisticated personal portfolio with modern animations and premium aesthetics",
@@ -24,7 +24,7 @@ const Portfolio = () => {
       id: 2,
       title: "Pearline",
       category: "Business Platform",
-      image: "/screencapture-pearline-2025-11-20-20_30_00.png",
+      image: "/screencapture-pearline-2025-11-20-20_30_00.webp",
       result: "+Professional UX",
       url: "https://pearline.com/",
       description: "Clean business platform optimized for service delivery and client engagement",
@@ -35,7 +35,7 @@ const Portfolio = () => {
       id: 3,
       title: "Kratom Online CA",
       category: "E-commerce",
-      image: "/screencapture-kratomonline-ca-2025-11-20-20_30_43.png",
+      image: "/screencapture-kratomonline-ca-2025-11-20-20_30_43.webp",
       result: "+Full Commerce",
       url: "https://kratomonline.ca/",
       description: "Complete e-commerce solution with product catalog and secure checkout",
@@ -46,7 +46,7 @@ const Portfolio = () => {
       id: 4,
       title: "Legal Services",
       category: "Law Firm",
-      image: "/lawyer.jpg",
+      image: "/lawyer_2.webp",
       result: "+Professional Law",
       url: "#legal-services",
       description: "Professional law firm website with practice areas, attorney profiles, and client portal",
@@ -57,7 +57,7 @@ const Portfolio = () => {
       id: 5,
       title: "Persueu Platform",
       category: "SaaS Application", 
-      image: "/screencapture-persueu-netlify-app-recommendations-2025-11-20-20_33_45.png",
+      image: "/screencapture-persueu-netlify-app-recommendations-2025-11-20-20_33_45_1.webp",
       result: "+SaaS Excellence",
       url: "https://persueu.netlify.app/",
       description: "Modern SaaS platform with dashboard functionality and data visualization",
@@ -68,7 +68,7 @@ const Portfolio = () => {
       id: 6,
       title: "Landing Page",
       category: "Marketing",
-      image: "/landing.png",
+      image: "/landing (1).webp",
       result: "+High Converting",
       url: "#landing-page",
       description: "High-converting landing page design with compelling copy and optimized conversion flow",
@@ -183,7 +183,7 @@ const Portfolio = () => {
 
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         {/* Header */}
-        <header className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <header className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
               background: 'rgba(255, 255, 255, 0.1)',

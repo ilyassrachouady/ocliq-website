@@ -74,14 +74,7 @@ const Herov2 = () => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto container-padding text-center px-4">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-          style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
-          }}
-        >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-8 bg-gradient-glass">
           <Sparkles className="w-4 h-4 text-white" />
           <span className="text-sm font-medium text-white">Premium Website Design & Optimization</span>
         </div>
@@ -92,7 +85,7 @@ const Herov2 = () => {
           itemProp="headline"
         >
           We Don't Just Build Websites —{' '}
-          <span className="bg-gradient-to-r from-[#00FFD1] to-blue-400 bg-clip-text text-transparent">
+          <span className="text-gradient">
             We Engineer Growth Engines
           </span>
         </h1>
@@ -108,7 +101,7 @@ const Herov2 = () => {
         <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" aria-label="Primary actions">
           <button 
             onClick={() => scrollToSection('leadform')}
-            className="group px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-xl text-base flex items-center gap-2"
+            className="group btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3 hover-scale"
             aria-label="Get your free website mockup - primary call to action"
             type="button"
           >
@@ -117,19 +110,7 @@ const Herov2 = () => {
           </button>
           <button 
             onClick={() => scrollToSection('portfolio')}
-            className="px-8 py-4 rounded-full font-semibold text-white text-base transition-all duration-300"
-            style={{
-              background: 'rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-            }}
+            className="btn-secondary px-8 py-4 rounded-xl text-base hover-scale"
             aria-label="View our portfolio and previous work"
             type="button"
           >

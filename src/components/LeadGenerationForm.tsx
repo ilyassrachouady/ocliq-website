@@ -211,7 +211,7 @@ const LeadGenerationForm = () => {
           </p>
         </div>
 
-        <div className={`rounded-3xl p-8 sm:p-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+        <div className={`rounded-3xl p-8 sm:p-12 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{
           background: 'rgba(255, 255, 255, 0.08)',
           backdropFilter: 'blur(15px)',
           WebkitBackdropFilter: 'blur(15px)',
