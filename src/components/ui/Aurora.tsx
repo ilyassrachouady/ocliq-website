@@ -131,7 +131,8 @@ export default function Aurora(props: AuroraProps) {
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: false, // Disable for performance
+      powerPreference: "high-performance" // Optimize for performance
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
@@ -141,16 +142,21 @@ export default function Aurora(props: AuroraProps) {
 
     let program: Program | undefined;
 
+    // Optimized resize with debounce
+    let resizeTimeout: number;
     function resize() {
-      if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
-      renderer.setSize(width, height);
-      if (program) {
-        program.uniforms.uResolution.value = [width, height];
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (!ctn) return;
+        const width = ctn.offsetWidth;
+        const height = ctn.offsetHeight;
+        renderer.setSize(width, height);
+        if (program) {
+          program.uniforms.uResolution.value = [width, height];
+        }
+      }, 16) as unknown as number; // ~60fps throttle
     }
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
 
     const geometry = new Triangle(gl);
     if (geometry.attributes.uv) {
@@ -178,8 +184,15 @@ export default function Aurora(props: AuroraProps) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
+    let lastTime = 0;
     const update = (t: number) => {
-      animateId = requestAnimationFrame(update);
+      // Limit to 60fps for better performance
+      if (t - lastTime < 16.67) {
+        animateId = requestAnimationFrame(update);
+        return;
+      }
+      lastTime = t;
+      
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       if (program) {
         program.uniforms.uTime.value = time * speed * 0.1;
@@ -192,6 +205,7 @@ export default function Aurora(props: AuroraProps) {
         });
         renderer.render({ scene: mesh });
       }
+      animateId = requestAnimationFrame(update);
     };
     animateId = requestAnimationFrame(update);
 
@@ -199,6 +213,7 @@ export default function Aurora(props: AuroraProps) {
 
     return () => {
       cancelAnimationFrame(animateId);
+      clearTimeout(resizeTimeout);
       window.removeEventListener('resize', resize);
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);

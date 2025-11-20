@@ -145,17 +145,15 @@ const LeadGenerationForm = () => {
             border: '1px solid rgba(255, 255, 255, 0.15)',
             boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
           }}>
-            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{
-              background: 'linear-gradient(135deg, #152e56, #2a96e8, white)'
-            }}>
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 bg-gradient-primary">
               <CheckCircle className="w-10 h-10 text-white" />
             </div>
             
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h3 className="heading-md mb-4">
               Thank You! 🎉
             </h3>
             
-            <p className="text-lg text-white/80 mb-6 leading-relaxed">
+            <p className="text-lg text-secondary mb-6 leading-relaxed">
               Your request has been submitted successfully. We'll create your custom website mockup and send it to your email within 24 hours.
             </p>
             
@@ -168,15 +166,15 @@ const LeadGenerationForm = () => {
               </p>
               <ul className="text-left text-white/70 mt-3 space-y-2">
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
+                  <div className="w-2 h-2 rounded-full bg-gradient-primary"></div>
                   <span>We'll analyze your current website or project idea</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
+                  <div className="w-2 h-2 rounded-full bg-gradient-primary"></div>
                   <span>Create a custom mockup design tailored to your business</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
+                  <div className="w-2 h-2 rounded-full bg-gradient-primary"></div>
                   <span>Send you the mockup with improvement recommendations</span>
                 </li>
               </ul>
@@ -196,22 +194,19 @@ const LeadGenerationForm = () => {
       
       <div className="max-w-4xl mx-auto container-padding relative z-10">
         <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6" style={{
-            background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
-            border: '1px solid rgba(42, 150, 232, 0.3)'
-          }}>
+          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6 bg-gradient-primary border border-white/20">
             <Sparkles className="w-4 h-4 text-white animate-pulse" />
             <span className="text-sm font-medium text-white">Free Custom Mockup</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
+          <h2 className="heading-lg mb-4 sm:mb-6">
             Get Your Free Website{' '}
-            <span className="bg-gradient-to-r from-[#152e56] via-[#2a96e8] to-white bg-clip-text text-transparent" style={{ textShadow: 'none' }}>
+            <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
               Mockup Design
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg text-founders-style max-w-2xl mx-auto px-4 sm:px-0">
             See exactly how your website could look with our proven design approach. We'll create a custom mockup showing your business with high-converting design elements, modern chatbots, and operational automations.
           </p>
         </div>
@@ -383,37 +378,6 @@ const LeadGenerationForm = () => {
         </div>
 
         {/* Value Proposition */}
-        <div className={`mt-12 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="p-6 rounded-xl" style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <div className="text-2xl font-bold text-white mb-2">High-Converting</div>
-              <div className="text-sm text-white/60">Website designs that turn visitors into customers</div>
-            </div>
-            <div className="p-6 rounded-xl" style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <div className="text-2xl font-bold text-white mb-2">Smart Chatbots</div>
-              <div className="text-sm text-white/60">AI-powered customer support and lead qualification</div>
-            </div>
-            <div className="p-6 rounded-xl" style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <div className="text-2xl font-bold text-white mb-2">Automation</div>
-              <div className="text-sm text-white/60">Streamlined operations that save time and money</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

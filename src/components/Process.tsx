@@ -123,10 +123,10 @@ const Process = () => {
       
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
+          <h2 className="heading-lg mb-3 sm:mb-4 md:mb-6" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
             Our Process
           </h2>
-          <p className="text-responsive text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-xl text-muted max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             A proven methodology that combines data-driven insights with design expertise to deliver measurable results.
           </p>
         </div>
@@ -161,10 +161,11 @@ const Process = () => {
                   e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)';
                 }}
               >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden flex-shrink-0"
+                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden flex-shrink-0 bg-gradient-primary border border-white/20 backdrop-blur-sm"
                   style={{
-                    background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
-                    border: '1px solid rgba(42, 150, 232, 0.3)'
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    boxShadow: '0 4px 15px rgba(0, 212, 170, 0.2)'
                   }}
                 >
                   {/* Wave animation effect */}
@@ -188,15 +189,15 @@ const Process = () => {
                   `
                 }} />
                 
-                <div className="text-sm font-semibold mb-2 sm:mb-3" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8, white)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                <div className="text-sm font-semibold mb-2 sm:mb-3 text-gradient">
                   Step {index + 1}
                 </div>
                 
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4 leading-tight">
+                <h3 className="heading-sm mb-3 sm:mb-4">
                   {step.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted leading-relaxed">
                   {step.description}
                 </p>
               </div>

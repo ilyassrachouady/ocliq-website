@@ -29,8 +29,8 @@ const MobileCTA = () => {
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 p-3 sm:p-4 shadow-lg">
       <button
-        onClick={() => scrollToSection('website-analysis')}
-        className="group w-full bg-[#00FFD1] text-slate-900 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#00FFD1]/90 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+        onClick={() => scrollToSection('leadform')}
+        className="group w-full bg-gradient-primary text-white py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
       >
         <span className="text-sm sm:text-base">Get Free Website Analysis</span>
         <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

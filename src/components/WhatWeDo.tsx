@@ -54,25 +54,41 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+    <section 
+      ref={sectionRef} 
+      id="services" 
+      className="section-padding relative overflow-hidden" 
+      style={{ background: '#000000' }}
+      itemScope 
+      itemType="https://schema.org/Organization"
+      aria-labelledby="services-heading"
+    >
       {/* Background effects - matching Herov2 */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent" role="presentation" aria-hidden="true"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       
       <div className="max-w-7xl mx-auto container-padding relative z-10">
-        <div className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
+        <header className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 
+            id="services-heading"
+            className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" 
+            style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}
+            itemProp="name"
+          >
             What We Do
           </h2>
-          <p className="text-responsive text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p 
+            className="text-xl text-muted max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
+            itemProp="description"
+          >
             We combine years of technical expertise with proven strategies to deliver digital solutions that drive real business growth.
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
               className={`group p-4 sm:p-5 lg:p-6 rounded-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -95,11 +111,16 @@ const WhatWeDo = () => {
                 e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.15)';
                 e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.37)';
               }}
+              itemScope 
+              itemType="https://schema.org/Service"
+              role="article"
+              aria-labelledby={`service-${index}-title`}
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden"
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden bg-gradient-primary border border-white/20 backdrop-blur-sm"
                 style={{
-                  background: 'linear-gradient(135deg, #152e56, #2a96e8, white)',
-                  border: '1px solid rgba(42, 150, 232, 0.3)'
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  boxShadow: '0 4px 15px rgba(0, 255, 209, 0.2)'
                 }}
               >
                 {/* Wave animation effect */}
@@ -123,23 +144,30 @@ const WhatWeDo = () => {
                 `
               }} />
 
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 leading-tight">
+              <h3 
+                id={`service-${index}-title`}
+                className="heading-sm mb-2 sm:mb-3"
+                itemProp="name"
+              >
                 {service.title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-white/70 mb-3 sm:mb-4 leading-relaxed">
+              <p 
+                className="text-xs sm:text-sm text-muted mb-3 sm:mb-4 leading-relaxed"
+                itemProp="description"
+              >
                 {service.description}
               </p>
 
-              <ul className="space-y-1 sm:space-y-1.5">
+              <ul className="space-y-1 sm:space-y-1.5" itemProp="offers" itemScope itemType="https://schema.org/OfferCatalog">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start text-xs text-white/60">
-                    <div className="w-1 h-1 rounded-full mr-2 mt-1.5 flex-shrink-0" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}></div>
+                  <li key={featureIndex} className="flex items-start text-xs text-white/60" itemProp="itemListElement">
+                    <div className="w-1 h-1 rounded-full mr-2 mt-1.5 flex-shrink-0 bg-gradient-primary" role="presentation" aria-hidden="true"></div>
                     <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </div>
