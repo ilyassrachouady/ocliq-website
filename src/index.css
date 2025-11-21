@@ -99,31 +99,31 @@
   }
   
   .text-primary {
-    @apply text-white font-medium leading-relaxed;
+    @apply text-foreground font-medium leading-relaxed;
   }
   
   .text-secondary {
-    @apply text-white/85 font-normal leading-relaxed;
+    @apply text-foreground/85 font-normal leading-relaxed;
   }
   
   .text-muted {
-    @apply text-white/75 font-normal leading-relaxed;
+    @apply text-foreground/75 font-normal leading-relaxed;
   }
   
   .text-subtle {
-    @apply text-white/60 font-normal leading-relaxed;
+    @apply text-foreground/60 font-normal leading-relaxed;
   }
   
   .text-body {
-    @apply text-base sm:text-lg text-white/85 font-normal leading-relaxed;
+    @apply text-base sm:text-lg text-foreground/85 font-normal leading-relaxed;
   }
   
   .text-caption {
-    @apply text-sm text-white/70 font-normal leading-normal;
+    @apply text-sm text-foreground/70 font-normal leading-relaxed;
   }
 
   .nav-text {
-    @apply text-white/90 font-medium hover:text-white transition-colors duration-200;
+    @apply text-foreground/90 font-medium hover:text-foreground transition-colors duration-200;
   }
   
   .text-gradient {

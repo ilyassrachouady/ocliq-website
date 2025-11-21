@@ -77,7 +77,7 @@ const Pricing = () => {
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto container-padding relative z-10">
+      <div className="container-width mx-auto container-padding relative z-10">
 
         {/* Main CTA Section */}
         <div className={`rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} bg-gradient-glass transition-delay-200`}>
@@ -92,10 +92,10 @@ const Pricing = () => {
               <span className="text-sm font-medium text-white">Free Custom Mockup</span>
             </div>
             
-            <h3 className="heading-sm mb-3">
+            <h3 className="heading-sm mb-3 text-balance">
               See Your Website's Potential
             </h3>
-            <p className="text-sm sm:text-base text-muted mb-6 max-w-lg mx-auto">
+            <p className="text-sm sm:text-base text-muted mb-6 max-w-prose mx-auto">
               Get a custom mockup showing how professional design converts more visitors into customers.
             </p>
 

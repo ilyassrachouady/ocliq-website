@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 // import { Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
@@ -22,23 +21,23 @@ const Contact = () => {
   // ];
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section id="contact" className="section-padding bg-background">
+      <div className="container-width mx-auto container-padding">
         {/* Contact Information */}
         {/* <div className="max-w-2xl mx-auto text-center">
-          <h2 className="heading-lg font-bold text-slate-900 mb-8">Get in Touch</h2>
+          <h2 className="heading-lg font-bold text-foreground mb-8 text-balance">Get in Touch</h2>
           
-          <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-slate-200 mb-8">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 mb-8">
             <div className="space-y-6">
               <div className="flex items-center justify-center space-x-3">
                 <Mail className="w-5 h-5 text-[#00FFD1]" />
-                <a href="mailto:ocliqagency@gmail.com" className="text-slate-600 hover:text-[#00FFD1] transition-colors text-lg">
+                <a href="mailto:ocliqagency@gmail.com" className="text-foreground hover:text-[#00FFD1] transition-colors text-lg">
                   ocliqagency@gmail.com
                 </a>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <MapPin className="w-5 h-5 text-[#00FFD1]" />
-                <span className="text-slate-600 text-lg">San Francisco, CA</span>
+                <span className="text-foreground text-lg">San Francisco, CA</span>
               </div>
             </div>
             
@@ -55,15 +54,15 @@ const Contact = () => {
           
           {/* FAQ */}
           {/* <div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4 text-left max-w-xl mx-auto">
+            <h3 className="text-xl font-semibold text-foreground mb-6 text-balance">Frequently Asked Questions</h3>
+            <div className="space-y-4 text-left max-w-prose mx-auto">
               {faqs.map((faq, index) => (
                 <details key={index} className="group">
-                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
-                    <span className="font-medium text-slate-900">{faq.question}</span>
-                    <span className="text-slate-400 group-open:rotate-180 transition-transform">↓</span>
+                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                    <span className="font-medium text-foreground">{faq.question}</span>
+                    <span className="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
                   </summary>
-                  <div className="p-4 text-slate-600 text-sm leading-relaxed">
+                  <div className="p-4 text-foreground/80 text-sm leading-relaxed">
                     {faq.answer}
                   </div>
                 </details>

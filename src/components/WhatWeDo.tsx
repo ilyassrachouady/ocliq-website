@@ -73,7 +73,7 @@ const WhatWeDo = () => {
     <section 
       ref={sectionRef} 
       id="services" 
-      className="section-spacing section-padding relative overflow-hidden bg-black"
+      className="section-spacing container-padding relative overflow-hidden bg-black"
       itemScope 
       itemType="https://schema.org/Organization"
       aria-labelledby="services-heading"
@@ -83,7 +83,7 @@ const WhatWeDo = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-900/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-width mx-auto relative z-10">
         <header className={`text-center mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <h2 
             id="services-heading"

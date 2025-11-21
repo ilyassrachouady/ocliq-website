@@ -32,9 +32,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding">
+    <div className="relative min-h-[100vh] flex items-center justify-center overflow-hidden container-padding header-offset">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900"></div>
 
       {/* Modern Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -59,19 +59,19 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto text-center" ref={heroRef}>
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-slate-900/5 px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
+          <div className="inline-flex items-center space-x-2 bg-gradient-glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <Sparkles className="w-4 h-4 text-[#00FFD1]" />
-            <span className="text-xs sm:text-sm font-medium text-slate-700">Premium Website Design & Optimization</span>
+            <span className="text-xs sm:text-sm font-medium text-white/80">Premium Website Design & Optimization</span>
           </div>
           
-          <h1 className="heading-xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
+          <h1 className="heading-xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             We Don't Just Build Websites —{' '}
             <span className="bg-gradient-to-r from-[#00FFD1] to-blue-600 bg-clip-text text-transparent">
               We Engineer Growth Engines
             </span>
           </h1>
 
-          <p className="text-responsive text-slate-600 mb-8 sm:mb-10 lg:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-responsive text-white/70 mb-8 sm:mb-10 lg:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             We analyze, redesign, and optimize your website to generate more leads, clients, and profits for your business.
           </p>
 

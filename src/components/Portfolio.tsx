@@ -175,7 +175,7 @@ const Portfolio = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-900/3 to-transparent rounded-full blur-2xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
+      <div className="container-width mx-auto container-padding relative z-10">
         <header className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-gradient-glass">
             <Globe className="w-4 h-4 text-white" />

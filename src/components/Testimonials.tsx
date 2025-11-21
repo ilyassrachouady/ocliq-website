@@ -79,13 +79,13 @@ const Testimonials = () => {
   }, [isPaused, testimonials.length]);
 
   return (
-    <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section className="section-padding bg-background">
+      <div className="container-width mx-auto container-padding">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="heading-lg font-bold text-slate-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
+          <h2 className="heading-lg font-bold text-foreground mb-3 sm:mb-4 md:mb-6 leading-tight text-balance">
             What Our Clients Say
           </h2>
-          <p className="text-responsive text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-responsive text-foreground/80 max-w-prose mx-auto leading-relaxed px-4 sm:px-0">
             Don't just take our word for it. Here's what industry leaders say about working with Ocliq.
           </p>
         </div>
@@ -96,20 +96,20 @@ const Testimonials = () => {
             onClick={prevSlide}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-slate-50 transition-all duration-300 hover:scale-110 border border-slate-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-gray-800 rounded-full p-3 shadow-lg hover:bg-gray-700 transition-all duration-300 hover:scale-110 border border-gray-700"
             aria-label="Previous testimonials"
           >
-            <ChevronLeft className="w-6 h-6 text-slate-700" />
+            <ChevronLeft className="w-6 h-6 text-foreground" />
           </button>
 
           <button
             onClick={nextSlide}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-slate-50 transition-all duration-300 hover:scale-110 border border-slate-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-gray-800 rounded-full p-3 shadow-lg hover:bg-gray-700 transition-all duration-300 hover:scale-110 border border-gray-700"
             aria-label="Next testimonials"
           >
-            <ChevronRight className="w-6 h-6 text-slate-700" />
+            <ChevronRight className="w-6 h-6 text-foreground" />
           </button>
 
           {/* Testimonials Grid */}
@@ -121,7 +121,7 @@ const Testimonials = () => {
             {getVisibleTestimonials().map((testimonial, index) => (
               <div 
                 key={index}
-                className="group relative p-8 rounded-2xl border border-slate-200 hover:border-[#00FFD1]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white"
+                className="group relative p-8 rounded-2xl border border-gray-700 hover:border-[#00FFD1]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gray-800"
               >
                 <Quote className="w-8 h-8 text-[#00FFD1] mb-6 opacity-60" />
                 
@@ -131,19 +131,19 @@ const Testimonials = () => {
                   ))}
                 </div>
                 
-                <p className="text-slate-600 mb-6 leading-relaxed italic">
+                <p className="text-foreground/80 mb-6 leading-relaxed italic">
                   "{testimonial.quote}"
                 </p>
                 
                 <div className="flex items-center space-x-4">
                   {/* Initials circle (photos removed for credibility) */}
-                  <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-sm font-semibold text-slate-700">
+                  <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-sm font-semibold text-foreground">
                     {testimonial.name.split(' ').map(n => n[0]).slice(0,2).join('')}
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{testimonial.name}</div>
-                    <div className="text-sm text-slate-500">{testimonial.role}</div>
-                    <div className="text-sm font-medium text-[#a0a6af]">{testimonial.company}</div>
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-sm text-foreground/80">{testimonial.role}</div>
+                    <div className="text-sm font-medium text-foreground/60">{testimonial.company}</div>
                   </div>
                 </div>
                 
@@ -160,7 +160,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'w-8 bg-[#00FFD1]' : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  currentIndex === index ? 'w-8 bg-[#00FFD1]' : 'w-2 bg-gray-600 hover:bg-gray-500'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
