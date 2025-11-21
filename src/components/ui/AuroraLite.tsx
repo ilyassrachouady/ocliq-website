@@ -7,11 +7,9 @@ interface AuroraLiteProps {
   speed?: number;
 }
 
-const AuroraLite: React.FC<AuroraLiteProps> = ({ 
+const AuroraLite: React.FC<AuroraLiteProps> = ({
   colorStops = ["#0127c1", "#0127c1", "#0127c1"],
-  blend = 1,
-  amplitude = 2,
-  speed = 0.9 
+  speed = 0.9
 }) => {
   return (
     <div className="absolute inset-0 overflow-hidden">

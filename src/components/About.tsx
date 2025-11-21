@@ -98,45 +98,26 @@ const About = () => {
 
         {/* Founders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {founders.map((founder, index) => (
+          {founders.map((founder) => (
             <article
               key={founder.name}
-              className="group p-8 rounded-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02]"
-              style={{
-                background: 'rgba(255, 255, 255, 0.08)',
-                backdropFilter: 'blur(15px)',
-                WebkitBackdropFilter: 'blur(15px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
-                e.currentTarget.style.border = '1px solid rgba(1, 39, 193, 0.4)';
-                e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(1, 39, 193, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.15)';
-                e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.37)';
-              }}
+              className="group p-8 rounded-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] bg-gradient-glass hover:bg-white/10 hover:border-cyan-400/50 shadow-lg"
             >
               <div className="flex flex-col items-center text-center">
                 {/* Profile Image */}
                 <div className="relative mb-6">
-                  <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-[#00FFD1]/50 transition-all duration-500 group-hover:scale-105">
+                  <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-cyan-300/50 transition-all duration-500 group-hover:scale-105">
                     <img
                       src={founder.imageSrc}
                       alt={`${founder.name} - ${founder.designation}`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                       onError={(e) => {
-                        // Fallback to initials if image fails to load
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
                         const parent = target.parentElement;
                         if (parent) {
                           const fallback = document.createElement('div');
-                          fallback.className = 'h-full w-full rounded-full flex items-center justify-center text-2xl font-bold text-white';
-                          fallback.style.background = 'linear-gradient(135deg, #1a1a2e, #16213e)';
+                          fallback.className = 'h-full w-full rounded-full flex items-center justify-center text-2xl font-bold text-white bg-gradient-to-br from-slate-700 to-slate-800';
                           fallback.textContent = founder.name.split(' ').map(n => n[0]).join('');
                           parent.appendChild(fallback);
                         }
@@ -145,16 +126,16 @@ const About = () => {
                   </div>
                   
                   {/* Glow effect on hover */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-[#00FFD1]/20 to-blue-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
                 {/* Name */}
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-[#00FFD1] group-hover:to-blue-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
                   {founder.name}
                 </h3>
 
                 {/* Title */}
-                <p className="text-white/70 text-sm font-medium mb-4">
+                <p className="text-subtle text-sm font-medium mb-4">
                   {founder.designation}
                 </p>
 
@@ -163,21 +144,7 @@ const About = () => {
                   href={founder.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white hover:text-[#00FFD1] transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(0, 255, 209, 0.1)';
-                    e.currentTarget.style.border = '1px solid rgba(0, 255, 209, 0.3)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                    e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium nav-text bg-gradient-glass hover:bg-cyan-400/10 hover:border-cyan-400/30 transition-all duration-300 hover:scale-105"
                   aria-label={`Connect with ${founder.name} on LinkedIn`}
                 >
                   <Linkedin className="w-4 h-4" />

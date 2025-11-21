@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Wand2, ArrowRight, CheckCircle } from 'lucide-react';
 
-const WebsiteAnalysis = () => {
+export const WebsiteAnalysis = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState('');
