@@ -93,10 +93,10 @@ const Pricing = () => {
         `
       }} />
 
-      <div className="max-w-6xl mx-auto container-padding relative z-10">
+      <div className="max-w-4xl lg:max-w-6xl mx-auto container-padding relative z-10">
 
         {/* Main CTA Section */}
-        <div className={`rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 xl:p-16 text-center text-white relative overflow-hidden transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           style={{
             background: 'rgba(255, 255, 255, 0.05)',
             backdropFilter: 'blur(10px)',
@@ -116,28 +116,33 @@ const Pricing = () => {
               <span className="text-sm font-medium text-white">Free Custom Mockup</span>
             </div>
             
-            <h3 className="heading-sm mb-3">
-              See Your Website's Potential
+            <h3 className="heading-sm text-white mb-3">
+              See Your Website's{' '}
+              <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
+                Potential
+              </span>
             </h3>
-            <p className="text-sm sm:text-base text-muted mb-6 max-w-lg mx-auto">
+            <p className="text-sm sm:text-base text-secondary mb-6 max-w-lg mx-auto">
               Get a custom mockup showing how professional design converts more visitors into customers.
             </p>
 
             {/* Compact Benefits */}
-            <div className="flex items-center justify-center space-x-6 mb-6 text-xs text-subtle">
+            <div className="flex items-center justify-center space-x-6 mb-6 text-xs text-white/80">
               <span>✓ Custom Design</span>
               <span>✓ 24hr Delivery</span>
               <span>✓ No Commitment</span>
             </div>
 
             {/* Compact CTA */}
-            <button
-              onClick={() => scrollToSection('leadform')}
-              className="group px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2 shadow-xl bg-gradient-primary text-white"
-            >
-              <span>Get Free Mockup</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={() => scrollToSection('leadform')}
+                className="group bg-white text-slate-900 px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
+              >
+                <span>Get Free Mockup</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

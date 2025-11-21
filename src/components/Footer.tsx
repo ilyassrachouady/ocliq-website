@@ -47,10 +47,10 @@ const Footer = () => {
         </div> */}
         
         {/* Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
-            <div className="heading-sm mb-4">Ocliq</div>
-            <p className="text-subtle mb-6">
+            <div className="text-xl font-bold text-white mb-4">Ocliq</div>
+            <p className="text-white/80 mb-6 leading-relaxed">
               Premium website design agency creating conversion-optimized websites that drive real business growth.
             </p>
             <div className="flex space-x-4">
@@ -70,8 +70,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-primary font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-subtle">
+            <h4 className="text-sm sm:text-base text-white font-semibold mb-3 sm:mb-4">Services</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-subtle">
               <li><a href="#" className="hover:text-white transition-colors">Website Design</a></li>
               <li><a href="#" className="hover:text-white transition-colors">E-commerce</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Web Applications</a></li>
@@ -80,8 +80,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-primary font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-subtle">
+            <h4 className="text-sm sm:text-base text-white font-semibold mb-3 sm:mb-4">Company</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-subtle">
               <li><button onClick={() => scrollToSection('portfolio')} className="hover:text-white transition-colors">Portfolio</button></li>
               <li><button onClick={() => scrollToSection('process')} className="hover:text-white transition-colors">Process</button></li>
               <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
@@ -89,9 +89,9 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
-            <h4 className="text-primary font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-3 text-subtle">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="text-sm sm:text-base text-white font-semibold mb-3 sm:mb-4">Contact Info</h4>
+            <ul className="space-y-3 text-xs sm:text-sm text-subtle">
               <li className="flex items-start space-x-2">
                 <div className="w-4 h-4 mt-1 flex-shrink-0 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #152e56, #2a96e8)' }}>
                   <Mail className="w-2.5 h-2.5 text-white" />
@@ -114,9 +114,9 @@ const Footer = () => {
         </div>
         
         {/* Bottom Bar */}
-        <div className="py-6 flex flex-col md:flex-row justify-between items-center" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-            <div className="text-white/60 text-sm">
+        <div className="py-4 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+            <div className="text-white/60 text-xs sm:text-sm text-center sm:text-left">
               © 2025 Ocliq. All rights reserved.
             </div>
             <div className="flex space-x-4 text-white/60 text-sm">

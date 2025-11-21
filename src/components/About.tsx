@@ -82,8 +82,8 @@ const About = () => {
             <span className="text-sm font-medium text-white">Meet Our Team</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-center">
-            <span className="block mb-2" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight text-center px-4 sm:px-0">
+            <span className="block mb-1 sm:mb-2" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
               Our
             </span>
             <span className="bg-gradient-to-r from-[#00FFD1] to-blue-400 bg-clip-text text-transparent">
@@ -91,13 +91,13 @@ const About = () => {
             </span>
           </h1>
           
-          <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-white/80 max-w-lg lg:max-w-2xl mx-auto leading-relaxed px-4 sm:px-6 lg:px-0">
             We started Ocliq to bring Apple-level precision to websites built for growth. After years of building successful projects, we know what drives real results.
           </p>
         </header>
 
         {/* Founders Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8" style={{ marginBottom: 'clamp(60px, 8vh, 120px)' }}>
           {founders.map((founder, index) => (
             <article
               key={founder.name}

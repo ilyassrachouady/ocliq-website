@@ -106,19 +106,39 @@ const Testimonials = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
-        <div className={`text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center px-4 py-2 rounded-full mb-6 bg-gradient-primary">
-            <span className="text-sm font-medium text-white">Testimonials</span>
+      <div className="container-spacing relative z-10">
+        <div className={`text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ marginBottom: 'clamp(40px, 6vh, 80px)' }}>
+          <div 
+            className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-primary"
+            style={{ marginBottom: 'clamp(8px, 1vw, 12px)' }}
+          >
+            <span 
+              className="font-medium text-white"
+              style={{ fontSize: 'clamp(0.7rem, 1vw, 0.8rem)' }}
+            >
+              Testimonials
+            </span>
           </div>
 
-          <h2 className="heading-lg mb-3 sm:mb-4 md:mb-6">
+          <h2 
+            className="font-bold text-white leading-tight"
+            style={{
+              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+              marginBottom: 'clamp(8px, 1vw, 12px)'
+            }}
+          >
             What our{' '}
             <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
               users say
             </span>
           </h2>
-          <p className="text-xl text-muted max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p 
+            className="text-white/85 mx-auto leading-relaxed"
+            style={{
+              fontSize: 'clamp(0.7rem, 1.2vw, 0.9rem)',
+              maxWidth: 'min(100%, 24rem)'
+            }}
+          >
             See what our customers have to say about us.
           </p>
         </div>

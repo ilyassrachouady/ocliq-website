@@ -73,7 +73,7 @@ const WhatWeDo = () => {
     <section 
       ref={sectionRef} 
       id="services" 
-      className="section-spacing section-padding relative overflow-hidden" 
+      className="section-padding relative overflow-hidden" 
       style={{ background: '#000000' }}
       itemScope 
       itemType="https://schema.org/Organization"
@@ -84,38 +84,65 @@ const WhatWeDo = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl" role="presentation" aria-hidden="true"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className={`text-center mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+      <div className="container-spacing relative z-10">
+        <header className={`text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ marginBottom: 'clamp(40px, 6vh, 80px)' }}>
           <h2 
             id="services-heading"
-            className="heading-lg font-bold text-white mb-6 leading-tight" 
-            style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}
+            className="font-bold text-white leading-tight" 
+            style={{ 
+              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+              marginBottom: 'clamp(8px, 1vw, 12px)',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' 
+            }}
             itemProp="name"
           >
             What We Do
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`group relative p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${
+              className={`group relative rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${
                 isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
               style={{
+                padding: 'clamp(16px, 3vw, 24px)',
                 animationDelay: `${index * 0.1}s`,
-                background: 'rgba(255, 255, 255, 0.2)',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                backdropFilter: 'blur(5px)',
-                WebkitBackdropFilter: 'blur(5px)',
-                border: '1px solid rgba(255, 255, 255, 0.3)'
+                background: 'rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(1, 39, 193, 0.1)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden'
               }}
               itemScope 
               itemType="https://schema.org/Service"
               role="article"
               aria-labelledby={`service-${index}-title`}
             >
+              {/* Sequential Glass Lightning Effect */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(45deg, transparent 30%, rgba(0, 255, 209, 0.15) 50%, transparent 70%)',
+                  animation: `glass-sweep 8s ease-in-out infinite`,
+                  animationDelay: `${index * 2}s`
+                }}
+              ></div>
+              
+              {/* Continuous Subtle Glass Effect */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(135deg, transparent 0%, rgba(0, 255, 209, 0.03) 50%, transparent 100%)',
+                  animation: `glass-shimmer 6s ease-in-out infinite alternate`,
+                  animationDelay: `${index * 1.5}s`
+                }}
+              ></div>
               
               {/* Content */}
               <div className="relative z-10">
@@ -139,7 +166,11 @@ const WhatWeDo = () => {
                 {/* Title */}
                 <h3 
                   id={`service-${index}-title`}
-                  className="text-lg font-bold text-white mb-2 transition-colors duration-300"
+                  className="font-bold text-white transition-colors duration-300"
+                  style={{
+                    fontSize: 'clamp(0.8rem, 1.3vw, 0.85rem)',
+                    marginBottom: 'clamp(6px, 1vw, 8px)'
+                  }}
                   itemProp="name"
                 >
                   {service.title}
@@ -147,7 +178,11 @@ const WhatWeDo = () => {
 
                 {/* Description */}
                 <p 
-                  className="text-sm text-white/90 mb-4 leading-relaxed"
+                  className="text-white/90 leading-relaxed"
+                  style={{
+                    fontSize: 'clamp(0.7rem, 1vw, 0.75rem)',
+                    marginBottom: 'clamp(8px, 1.5vw, 12px)'
+                  }}
                   itemProp="description"
                 >
                   {service.description}

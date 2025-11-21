@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle, AlertCircle, Loader2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle, AlertCircle, Loader2, Sparkles, Check } from 'lucide-react';
 import { supabase, type Lead } from '../lib/supabase';
 
 const LeadGenerationForm = () => {
@@ -192,34 +192,73 @@ const LeadGenerationForm = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0127c1]/8 rounded-full blur-3xl"></div>
       
-      <div className="max-w-4xl mx-auto container-padding relative z-10">
-        <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6 bg-gradient-primary border border-white/20">
-            <Sparkles className="w-4 h-4 text-white animate-pulse" />
-            <span className="text-sm font-medium text-white">Free Custom Mockup</span>
+      <div className="container-spacing relative z-10">
+        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ marginBottom: 'clamp(40px, 6vh, 80px)' }}>
+          <div 
+            className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00FFD1]/20 via-[#0080ff]/20 to-[#0127c1]/20 border border-[#00FFD1]/30"
+            style={{ marginBottom: 'clamp(8px, 1vw, 12px)' }}
+          >
+            <div className="w-2 h-2 bg-[#00FFD1] rounded-full animate-pulse"></div>
+            <span 
+              className="font-medium text-white"
+              style={{ fontSize: 'clamp(0.7rem, 1vw, 0.8rem)' }}
+            >
+              Limited Time - Free Professional Design
+            </span>
           </div>
           
-          <h2 className="heading-lg mb-4 sm:mb-6">
-            Get Your Free Website{' '}
+          <h2 
+            className="font-bold text-white leading-tight"
+            style={{
+              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+              marginBottom: 'clamp(8px, 1vw, 12px)'
+            }}
+          >
+            Transform Your Business with a{' '}
             <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
-              Mockup Design
+              Custom Website Design
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg text-founders-style max-w-2xl mx-auto px-4 sm:px-0">
-            See exactly how your website could look with our proven design approach. We'll create a custom mockup showing your business with high-converting design elements, modern chatbots, and operational automations.
+          <p className="text-base sm:text-lg lg:text-xl text-secondary max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-6 lg:px-0 leading-relaxed">
+            Get a professional mockup that shows exactly how your website could increase conversions, generate more leads, and grow your business. No commitment required.
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 px-4 sm:px-0">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#00FFD1]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-[#00FFD1]" />
+              </div>
+              <span className="text-sm sm:text-base text-white/90 font-medium">24-hour delivery</span>
+            </div>
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#00FFD1]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-[#00FFD1]" />
+              </div>
+              <span className="text-sm sm:text-base text-white/90 font-medium">Custom design strategy</span>
+            </div>
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#00FFD1]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-[#00FFD1]" />
+              </div>
+              <span className="text-sm sm:text-base text-white/90 font-medium">Conversion optimization</span>
+            </div>
+          </div>
         </div>
 
-        <div className={`rounded-3xl p-8 sm:p-12 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{
+        <div className={`rounded-3xl mx-auto ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{
+          padding: 'clamp(32px, 6vw, 64px)',
+          maxWidth: 'min(100%, 32rem)',
+          marginBottom: 'clamp(60px, 8vh, 120px)',
           background: 'rgba(255, 255, 255, 0.08)',
           backdropFilter: 'blur(15px)',
           WebkitBackdropFilter: 'blur(15px)',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-          transitionDelay: '0.2s'
+          transitionDelay: '0.2s',
+          width: '100%'
         }}>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Full Name */}
             <div>
               <label htmlFor="full_name" className="block text-sm font-semibold text-white mb-2">
@@ -254,7 +293,7 @@ const LeadGenerationForm = () => {
 
             {/* Phone Number */}
             <div>
-              <label htmlFor="phone_number" className="block text-sm font-semibold text-white mb-2">
+              <label htmlFor="phone_number" className="block text-xs sm:text-sm font-semibold text-white mb-2">
                 Phone Number *
               </label>
               <input
@@ -269,7 +308,7 @@ const LeadGenerationForm = () => {
                   border: errors.phone_number ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
                   color: 'white'
                 }}
-                className={`w-full px-6 py-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
+                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
                   errors.phone_number 
                     ? 'focus:ring-red-500/20 focus:border-red-500' 
                     : 'focus:ring-blue-500/20 focus:border-blue-500'
@@ -286,7 +325,7 @@ const LeadGenerationForm = () => {
 
             {/* Email Address */}
             <div>
-              <label htmlFor="email_address" className="block text-sm font-semibold text-white mb-2">
+              <label htmlFor="email_address" className="block text-xs sm:text-sm font-semibold text-white mb-2">
                 Email Address *
               </label>
               <input
@@ -301,7 +340,7 @@ const LeadGenerationForm = () => {
                   border: errors.email_address ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
                   color: 'white'
                 }}
-                className={`w-full px-6 py-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
+                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-300 focus:outline-none focus:ring-2 placeholder:text-white/40 ${
                   errors.email_address 
                     ? 'focus:ring-red-500/20 focus:border-red-500' 
                     : 'focus:ring-blue-500/20 focus:border-blue-500'
@@ -318,7 +357,7 @@ const LeadGenerationForm = () => {
 
             {/* Business Website / Project Idea */}
             <div>
-              <label htmlFor="business_info" className="block text-sm font-semibold text-white mb-2">
+              <label htmlFor="business_info" className="block text-xs sm:text-sm font-semibold text-white mb-2">
                 Business Website / Project Idea
               </label>
               <textarea
@@ -333,7 +372,7 @@ const LeadGenerationForm = () => {
                   border: '1px solid rgba(255, 255, 255, 0.1)',
                   color: 'white'
                 }}
-                className="w-full px-6 py-4 rounded-2xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none placeholder:text-white/40"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl text-sm sm:text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none placeholder:text-white/40"
               />
               <p className="text-xs text-white/50 mt-2">
                 Optional, but recommended for a more personalized mockup
@@ -345,10 +384,7 @@ const LeadGenerationForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                style={{
-                  background: 'linear-gradient(135deg, #152e56, #2a96e8, white)'
-                }}
-                className="group w-full text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group w-full bg-white text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {isSubmitting ? (
                   <>
@@ -357,7 +393,7 @@ const LeadGenerationForm = () => {
                   </>
                 ) : (
                   <>
-                    <span>👉 Get Your Free Mockup</span>
+                    <span>Get Your Free Mockup</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </>
                 )}

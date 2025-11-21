@@ -33,8 +33,11 @@ const WhyDifferent = () => {
     <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
       <div className="max-w-7xl mx-auto container-padding">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="heading-lg font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-            Why Ocliq Is Different
+          <h2 className="heading-lg font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
+            Why Ocliq Is{' '}
+            <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
+              Different
+            </span>
           </h2>
           <p className="text-responsive text-slate-300 max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed px-4 sm:px-0">
             We don't guess. We analyze, strategize, and optimize using proven methods and real performance data.

@@ -12,7 +12,12 @@ const Herov2 = () => {
   return (
     <section 
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden" 
-      style={{ background: '#000000' }}
+      style={{ 
+        background: '#000000',
+        paddingTop: 'clamp(120px, 15vh, 180px)', // Increased top padding
+        paddingBottom: 'clamp(80px, 10vh, 120px)', // Balanced bottom spacing
+        zIndex: 1
+      }}
       itemScope 
       itemType="https://schema.org/WebPage"
       aria-label="Hero section with AI-powered web design services"
@@ -72,7 +77,8 @@ const Herov2 = () => {
       `}} />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto container-padding text-center px-4">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-8 bg-gradient-glass">
           <Sparkles className="w-4 h-4 text-white" />
@@ -81,7 +87,11 @@ const Herov2 = () => {
 
         {/* Main Heading */}
         <h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
+          className="font-bold text-white leading-tight"
+          style={{
+            fontSize: 'clamp(1.2rem, 2.8vw, 2.2rem)',
+            marginBottom: 'clamp(12px, 2vw, 20px)'
+          }}
           itemProp="headline"
         >
           We Don't Build Websites.{' '}
@@ -91,32 +101,39 @@ const Herov2 = () => {
         </h1>
 
         <p 
-          className="text-lg sm:text-xl text-white/85 mb-8 max-w-3xl mx-auto leading-relaxed font-medium"
+          className="text-white/85 leading-relaxed font-medium mx-auto"
+          style={{
+            fontSize: 'clamp(0.7rem, 1.2vw, 0.9rem)',
+            marginBottom: 'clamp(10px, 2vw, 16px)',
+            maxWidth: 'min(100%, 32rem)'
+          }}
           itemProp="description"
         >
           Precision-built, conversion-optimized websites crafted to elevate your brand and turn visitors into clients — every single day.
         </p>
 
-        {/* Credibility Line */}
-        <p className="text-base text-white/70 mb-8 max-w-2xl mx-auto">
-          Trusted by fast-growing businesses across the US, Canada, and Europe.
-        </p>
-
-
         {/* CTA Buttons */}
-        <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" aria-label="Primary actions">
+        <nav className="flex flex-col sm:flex-row justify-center items-center" style={{ gap: 'clamp(12px, 2vw, 16px)' }} aria-label="Primary actions">
           <button 
             onClick={() => scrollToSection('leadform')}
-            className="group bg-white text-slate-900 px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
+            className="group bg-white text-slate-900 rounded-full font-semibold flex items-center gap-2 hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
+            style={{
+              padding: 'clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 24px)',
+              fontSize: 'clamp(0.75rem, 1.2vw, 0.85rem)'
+            }}
             aria-label="Start your free mockup - primary call to action"
             type="button"
           >
             <span>Start Your Free Mockup</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </button>
           <button 
             onClick={() => scrollToSection('portfolio')}
-            className="btn-secondary px-8 py-4 rounded-full text-base font-semibold hover-scale"
+            className="btn-secondary rounded-full font-semibold hover-scale"
+            style={{
+              padding: 'clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 24px)',
+              fontSize: 'clamp(0.75rem, 1.2vw, 0.85rem)'
+            }}
             aria-label="View our client results and portfolio"
             type="button"
           >
@@ -124,8 +141,21 @@ const Herov2 = () => {
           </button>
         </nav>
 
+        {/* Credibility Line */}
+        <p 
+          className="text-white/70 mx-auto"
+          style={{
+            fontSize: 'clamp(0.7rem, 1.2vw, 0.85rem)',
+            marginTop: 'clamp(24px, 4vw, 32px)',
+            marginBottom: 'clamp(12px, 2vw, 16px)',
+            maxWidth: 'min(100%, 26rem)'
+          }}
+        >
+          Trusted by fast-growing businesses across the globe.
+        </p>
+
         {/* Trust Badges - At Bottom of Hero */}
-        <div className="mt-16 mb-8">
+        <div className="mt-8 sm:mt-12 mb-6 sm:mb-8">
           
           {/* Endless Animated Scrolling Container */}
           <div className="relative overflow-hidden">

@@ -181,9 +181,9 @@ const Portfolio = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-[#0127c1]/3 to-transparent rounded-full blur-2xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
+      <div className="container-spacing relative z-10">
         {/* Header */}
-        <header className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <header className={`text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ marginBottom: 'clamp(40px, 6vh, 80px)' }}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
               background: 'rgba(255, 255, 255, 0.1)',
@@ -198,8 +198,12 @@ const Portfolio = () => {
           
           <h2 
             id="portfolio-heading"
-            className="heading-lg mb-6"
-            style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}
+            className="font-bold text-white"
+            style={{ 
+              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+              marginBottom: 'clamp(8px, 1vw, 12px)',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' 
+            }}
           >
             Websites That{' '}
             <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
@@ -207,7 +211,14 @@ const Portfolio = () => {
             </span>
           </h2>
           
-          <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+          <p 
+            className="text-white/85 mx-auto leading-relaxed"
+            style={{
+              fontSize: 'clamp(0.7rem, 1.2vw, 0.9rem)',
+              maxWidth: 'min(100%, 24rem)',
+              marginBottom: 'clamp(16px, 3vw, 24px)'
+            }}
+          >
             See our latest projects in action. Real websites, real results.
           </p>
         </header>
@@ -216,8 +227,14 @@ const Portfolio = () => {
         <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           
           {/* Large Featured Project Display */}
-          <div className="relative h-[70vh] rounded-3xl overflow-hidden mb-8"
+          <div 
+            className="relative rounded-3xl overflow-hidden"
             style={{
+              height: 'clamp(70vh, 85vw, 95vh)',
+              width: '100%',
+              maxWidth: 'min(95vw, 1400px)',
+              margin: '0 auto',
+              marginBottom: 'clamp(60px, 8vh, 120px)',
               background: 'rgba(255, 255, 255, 0.08)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
@@ -226,8 +243,14 @@ const Portfolio = () => {
             }}
           >
             {/* Desktop Frame Mockup */}
-            <div className="absolute inset-0 p-8 flex items-center justify-center">
-              <div className="desktop-frame-mockup group relative w-full max-w-6xl h-full transition-all duration-500 hover:scale-[1.02]">
+            <div 
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ padding: 'clamp(8px, 2vw, 16px)' }}
+            >
+              <div 
+                className="desktop-frame-mockup group relative w-full h-full transition-all duration-500 hover:scale-[1.01]"
+                style={{ maxWidth: '100%' }}
+              >
                 {/* Desktop Frame */}
                 <div 
                   className="relative w-full h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/20"
@@ -359,12 +382,20 @@ const Portfolio = () => {
                 </div>
                 
                 {/* Visit Live Site Button */}
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+                <div 
+                  className="absolute left-1/2 transform -translate-x-1/2 z-20" 
+                  style={{ bottom: 'clamp(-20px, -4vw, -24px)' }}
+                >
                   <a
                     href={portfolioProjects[currentSlide].url}
                     target={portfolioProjects[currentSlide].url?.startsWith('#') ? '_self' : '_blank'}
                     rel={portfolioProjects[currentSlide].url?.startsWith('#') ? '' : 'noopener noreferrer'}
-                    className="visit-live-btn group inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50"
+                    className="visit-live-btn group inline-flex items-center gap-3 bg-white text-slate-900 rounded-full font-semibold hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
+                    style={{ 
+                      padding: 'clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px)',
+                      fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+                      minHeight: '44px'
+                    }}
                   >
                     {portfolioProjects[currentSlide].isPlaceholder ? (
                       <>
@@ -406,7 +437,7 @@ const Portfolio = () => {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-4 mb-12 overflow-x-auto pb-2">
+          <div className="flex justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 overflow-x-auto pb-2 px-4">
             {portfolioProjects.map((project, index) => (
               <button
                 key={project.id}
@@ -465,11 +496,11 @@ const Portfolio = () => {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="group px-6 py-2 bg-white text-black rounded-full font-semibold hover:scale-105 transition-all duration-300 text-sm flex items-center gap-2"
+              className="group bg-white text-slate-900 px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
               aria-label="Get your free website mockup"
             >
               <span>Get Started</span>
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
@@ -566,16 +597,6 @@ const Portfolio = () => {
             filter: drop-shadow(0 20px 50px rgba(59,130,246,0.4));
           }
           
-          .visit-live-btn {
-            background: linear-gradient(135deg, #ffffff, #f8fafc);
-            border: 1px solid rgba(0,0,0,0.1);
-          }
-          
-          .visit-live-btn:hover {
-            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 20px 40px rgba(59,130,246,0.3);
-          }
           
           /* Responsive Design */
           @media (max-width: 1024px) {

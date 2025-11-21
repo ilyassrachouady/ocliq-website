@@ -6,36 +6,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Design System */
+/* Professional Design System - Apple-level precision */
 @layer base {
   
-  /* Consistent Spacing Scale */
+  /* Unified Spacing Scale - Based on 4px grid */
   :root {
-    --spacing-xs: 0.5rem;    /* 8px */
-    --spacing-sm: 0.75rem;   /* 12px */
-    --spacing-md: 1rem;      /* 16px */
-    --spacing-lg: 1.5rem;    /* 24px */
-    --spacing-xl: 2rem;      /* 32px */
-    --spacing-2xl: 3rem;     /* 48px */
-    --spacing-3xl: 4rem;     /* 64px */
-    --spacing-4xl: 6rem;     /* 96px */
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-8: 2rem;       /* 32px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+    --space-32: 8rem;      /* 128px */
+    
+    /* Responsive spacing - fluid scaling */
+    --section-padding-y: clamp(3rem, 8vw, 8rem);
+    --section-padding-x: clamp(1rem, 4vw, 3rem);
+    --container-max-width: min(90vw, 1200px);
+    
+    /* Typography scale */
+    --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 2.2vw, 1rem);
+    --text-base: clamp(1rem, 2.5vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 3vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 3.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 4vw, 2rem);
+    --text-3xl: clamp(2rem, 5vw, 2.5rem);
+    --text-4xl: clamp(2.5rem, 6vw, 3.5rem);
+    --text-5xl: clamp(3rem, 7vw, 4.5rem);
   }
   
-  /* Professional Typography Hierarchy */
-  .heading-xl {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight;
+  /* Fluid Typography System */
+  .heading-hero {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
   
-  .heading-lg {
-    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight;
+  .heading-section {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
   }
   
-  .heading-md {
-    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight;
+  .heading-card {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
   }
   
-  .heading-sm {
-    @apply text-xl sm:text-2xl font-bold text-white leading-tight;
+  .text-body {
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  .text-caption {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
   }
   
   /* Professional Text System */
@@ -70,7 +110,7 @@
   
   /* Clean Gradient System */
   .text-gradient {
-    background: linear-gradient(120deg, #00d4ff 0%, #0099cc 50%, #0066aa 100%);
+    background: linear-gradient(135deg, #00FFD1 0%, #0080ff 50%, #0127c1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -218,6 +258,143 @@
 
 * {
   box-sizing: border-box;
+}
+
+/* Fix horizontal scrolling and overflow issues */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force all containers to stay within viewport */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling - Global fix */
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Force all containers to respect viewport width */
+.container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl, .max-w-lg {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive image and media fixes */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6, span, div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Prevent horizontal scrolling - Global fix */
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Force all containers to respect viewport width */
+.container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl, .max-w-lg {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive image and media fixes */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6, span, div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 480px) {
+  /* Ensure buttons are touch-friendly */
+  button, .btn, .button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Reduce large spacing on mobile */
+  .section-padding {
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .section-padding { 
+    padding: 3rem 0; 
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-padding { 
+    padding: 4rem 0; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .section-padding { 
+    padding: 5rem 0; 
+  }
+}
+
+/* Responsive container system */
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: clamp(2rem, 6vw, 3rem);
+    --section-padding-x: clamp(1rem, 3vw, 1.5rem);
+    --container-max-width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --section-padding-y: clamp(2.5rem, 7vw, 4rem);
+    --section-padding-x: clamp(1.5rem, 4vw, 2rem);
+    --container-max-width: min(95vw, 740px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --section-padding-y: clamp(3rem, 7vw, 6rem);
+    --section-padding-x: clamp(2rem, 4vw, 2.5rem);
+    --container-max-width: min(92vw, 980px);
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --section-padding-y: clamp(4rem, 8vw, 8rem);
+    --section-padding-x: clamp(2rem, 4vw, 3rem);
+    --container-max-width: min(90vw, 1200px);
+  }
 }
 
 body {
@@ -443,34 +620,141 @@ button {
 .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
 .stagger-animation:nth-child(5) { animation-delay: 0.5s; }
 
-/* Responsive spacing utilities */
+/* Proper section separation - one section visible at a time */
 .section-padding {
-  @apply py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28;
+  padding-top: clamp(60px, 8vh, 120px);
+  padding-bottom: clamp(60px, 8vh, 120px);
 }
 
-.container-padding {
-  @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+.container-spacing {
+  padding-left: clamp(12px, 2vw, 24px);
+  padding-right: clamp(12px, 2vw, 24px);
+  max-width: min(99vw, 1800px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+/* Section stacking - no overlaps */
+section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+
+/* Glass lighting animations */
+@keyframes glass-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glass-shimmer {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(0%) rotate(1deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(50%) rotate(0deg);
+    opacity: 0.1;
+  }
+}
+
+/* Process step animations */
+@keyframes step-progress {
+  0%, 20% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  80%, 100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes step-pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes progress-flow {
+  0% {
+    transform: translateX(-100%) scaleX(0);
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0);
+  }
+}
+
+@keyframes connector-flow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 .header-offset {
   @apply pt-14 sm:pt-16 lg:pt-20;
 }
 
-/* Responsive text utilities */
+/* Legacy responsive text utilities - Updated to use CSS variables */
 .heading-xl {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
 }
 
 .heading-lg {
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
 }
 
 .heading-md {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
 }
 
 .heading-sm {
-  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
 }
 
 .text-responsive {

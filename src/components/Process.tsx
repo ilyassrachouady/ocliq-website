@@ -50,7 +50,7 @@ const Process = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="process" className="section-spacing section-padding relative overflow-hidden" style={{ background: '#000000' }}>
+    <section ref={sectionRef} id="process" className="fitted-section relative overflow-hidden" style={{ background: '#000000' }}>
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0127c1]/3 to-transparent"></div>
       
@@ -121,29 +121,70 @@ const Process = () => {
         `
       }} />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`text-center mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <h2 className="heading-lg font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' }}>
-            Our Process
+      <div className="container-spacing relative z-10">
+        <div className={`text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ marginBottom: 'clamp(40px, 6vh, 80px)' }}>
+          <h2 
+            className="font-bold text-white leading-tight" 
+            style={{ 
+              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+              marginBottom: 'clamp(8px, 1vw, 12px)',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)' 
+            }}
+          >
+            Our{' '}
+            <span className="bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] bg-clip-text text-transparent">
+              Process
+            </span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="relative">
+          {/* Animated Progress Line - Desktop */}
+          <div className="hidden lg:block absolute top-20 left-0 w-full h-0.5 z-0">
+            <div 
+              className="h-full bg-gradient-to-r from-[#00FFD1] via-[#0080ff] to-[#0127c1] opacity-30"
+              style={{
+                animation: 'progress-flow 8s ease-in-out infinite'
+              }}
+            ></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
           {steps.map((step, index) => (
             <article
               key={index}
-              className={`group relative p-6 rounded-3xl transition-all duration-700 ease-out hover:-translate-y-3 hover:scale-[1.08] cursor-pointer overflow-hidden ${
+              className={`group relative rounded-2xl sm:rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer overflow-hidden ${
                 isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
               style={{
+                padding: 'clamp(16px, 3vw, 24px)',
                 animationDelay: `${index * 0.1}s`,
-                background: 'rgba(255, 255, 255, 0.15)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(20px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                border: '1px solid rgba(255, 255, 255, 0.2)'
+                background: 'rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(1, 39, 193, 0.1)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)'
               }}
             >
+              {/* Sequential Glass Lightning Effect */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(45deg, transparent 30%, rgba(0, 255, 209, 0.15) 50%, transparent 70%)',
+                  animation: `glass-sweep 8s ease-in-out infinite`,
+                  animationDelay: `${index * 2}s`
+                }}
+              ></div>
+              
+              {/* Continuous Subtle Glass Effect */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(135deg, transparent 0%, rgba(0, 255, 209, 0.03) 50%, transparent 100%)',
+                  animation: `glass-shimmer 6s ease-in-out infinite alternate`,
+                  animationDelay: `${index * 1.5}s`
+                }}
+              ></div>
               {/* Apple-style glass shimmer effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                 <div 
@@ -163,40 +204,94 @@ const Process = () => {
                 <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-white/20 to-transparent z-0 group-hover:from-white/40 transition-all duration-300"></div>
               )}
               
-              <div className="relative z-20 text-center">
-                {/* Icon and Step Number */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-700 ease-out transform-gpu"
+              {/* Step Progress Indicator */}
+              <div className="flex justify-center mb-4">
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center relative group-hover:scale-110 transition-all duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(1, 39, 193, 0.3) 0%, rgba(0, 255, 209, 0.2) 100%)',
+                    border: '2px solid rgba(0, 255, 209, 0.3)',
+                    boxShadow: '0 8px 32px rgba(1, 39, 193, 0.3), 0 0 20px rgba(0, 255, 209, 0.2)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                  }}
+                >
+                  {/* Animated Progress Ring */}
+                  <div 
+                    className="absolute inset-0 rounded-full border-2 border-transparent"
                     style={{
-                      background: 'linear-gradient(135deg, #0ea5e9, #06b6d4, #8b5cf6)',
-                      boxShadow: '0 8px 32px rgba(14, 165, 233, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                      backdropFilter: 'blur(20px) saturate(200%)',
-                      WebkitBackdropFilter: 'blur(20px) saturate(200%)',
+                      background: `conic-gradient(from 0deg, rgba(0, 255, 209, 0.8) 0%, rgba(0, 255, 209, 0.8) ${(index + 1) * 25}%, transparent ${(index + 1) * 25}%)`,
+                      mask: 'radial-gradient(circle, transparent 70%, black 72%)',
+                      animation: `step-progress 3s ease-in-out infinite`,
+                      animationDelay: `${index * 0.5}s`
+                    }}
+                  ></div>
+                  
+                  {/* Pulsing Core */}
+                  <div 
+                    className="absolute inset-2 rounded-full opacity-50"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(0, 255, 209, 0.6) 0%, transparent 70%)',
+                      animation: `step-pulse 2s ease-in-out infinite`,
+                      animationDelay: `${index * 0.3}s`
+                    }}
+                  ></div>
+                  
+                  <step.icon className="w-8 h-8 text-white drop-shadow-lg relative z-10" />
+                  
+                  {/* Step Number Badge */}
+                  <div 
+                    className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-black"
+                    style={{
+                      background: 'linear-gradient(135deg, #00FFD1, #0080ff)',
+                      boxShadow: '0 2px 8px rgba(0, 255, 209, 0.4)'
                     }}
                   >
-                    {/* Icon glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md" />
-                    <step.icon className="w-10 h-10 text-white drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-700" />
+                    {index + 1}
                   </div>
                 </div>
-
-                {/* Step Number */}
-                <div className="text-sm font-bold text-white/40 group-hover:text-white/70 mb-3 transition-all duration-700 transform group-hover:scale-105">
-                  Step {index + 1}
+              </div>
+              
+              {/* Progress Connector - Mobile */}
+              {index < 3 && (
+                <div className="lg:hidden flex justify-center my-4">
+                  <div 
+                    className="w-0.5 h-8 bg-gradient-to-b from-[#00FFD1] to-transparent"
+                    style={{
+                      animation: `connector-flow 2s ease-in-out infinite`,
+                      animationDelay: `${index * 0.5}s`
+                    }}
+                  ></div>
                 </div>
+              )}
+              
+              <div className="relative z-20 text-center">
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/95 transition-all duration-700 transform group-hover:scale-105 group-hover:-translate-y-1">
+                <h3 
+                  className="font-bold text-white transition-colors duration-300"
+                  style={{
+                    fontSize: 'clamp(0.8rem, 1.3vw, 0.85rem)',
+                    marginBottom: 'clamp(6px, 1vw, 8px)'
+                  }}
+                >
                   {step.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-sm text-white/80 group-hover:text-white/90 leading-relaxed transition-all duration-700 transform group-hover:scale-105">
+                <p 
+                  className="text-white/90 leading-relaxed"
+                  style={{
+                    fontSize: 'clamp(0.7rem, 1vw, 0.75rem)',
+                    marginBottom: 'clamp(8px, 1.5vw, 12px)'
+                  }}
+                >
                   {step.description}
                 </p>
               </div>
             </article>
           ))}
+          </div>
         </div>
       </div>
     </section>

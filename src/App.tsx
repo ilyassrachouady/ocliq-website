@@ -101,7 +101,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black">
         <Analytics />
         <Routes>
           <Route path="/" element={<HomePage />} />

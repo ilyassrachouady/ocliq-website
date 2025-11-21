@@ -78,7 +78,7 @@ const WebsiteAnalysis = () => {
                 <button
                   type="submit"
                   disabled={isGenerating}
-                  className="group w-full bg-slate-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-800 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50"
+                  className="group w-full bg-white text-slate-900 px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isGenerating ? (
                     <>
