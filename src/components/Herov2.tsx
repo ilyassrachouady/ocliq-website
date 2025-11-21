@@ -84,45 +84,48 @@ const Herov2 = () => {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
           itemProp="headline"
         >
-          We Don't Just Build Websites —{' '}
+          We Don't Build Websites.{' '}
           <span className="text-gradient">
-            We Engineer Growth Engines
+            We Build Digital Flagships.
           </span>
         </h1>
 
         <p 
-          className="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl text-white/85 mb-8 max-w-3xl mx-auto leading-relaxed font-medium"
           itemProp="description"
         >
-          We analyze, redesign, and optimize your website to generate more leads, clients, and profits for your business. Transform your online presence with AI-powered design and conversion optimization.
+          Precision-built, conversion-optimized websites crafted to elevate your brand and turn visitors into clients — every single day.
         </p>
+
+        {/* Credibility Line */}
+        <p className="text-base text-white/70 mb-8 max-w-2xl mx-auto">
+          Trusted by fast-growing businesses across the US, Canada, and Europe.
+        </p>
+
 
         {/* CTA Buttons */}
         <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" aria-label="Primary actions">
           <button 
             onClick={() => scrollToSection('leadform')}
-            className="group btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3 hover-scale"
-            aria-label="Get your free website mockup - primary call to action"
+            className="group bg-white text-slate-900 px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 hover-scale shadow-lg hover:shadow-xl transition-all duration-200"
+            aria-label="Start your free mockup - primary call to action"
             type="button"
           >
-            <span>Get Your Free Website Mockup</span>
+            <span>Start Your Free Mockup</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </button>
           <button 
             onClick={() => scrollToSection('portfolio')}
-            className="btn-secondary px-8 py-4 rounded-xl text-base hover-scale"
-            aria-label="View our portfolio and previous work"
+            className="btn-secondary px-8 py-4 rounded-full text-base font-semibold hover-scale"
+            aria-label="View our client results and portfolio"
             type="button"
           >
-            View Our Work
+            See Client Results
           </button>
         </nav>
 
         {/* Trust Badges - At Bottom of Hero */}
         <div className="mt-16 mb-8">
-          <p className="text-center text-xs font-medium text-white/40 tracking-wider uppercase mb-6">
-            Trusted by Leading Companies
-          </p>
           
           {/* Endless Animated Scrolling Container */}
           <div className="relative overflow-hidden">
@@ -184,6 +187,7 @@ const Herov2 = () => {
             `
           }} />
         </div>
+
       </div>
     </section>
   );

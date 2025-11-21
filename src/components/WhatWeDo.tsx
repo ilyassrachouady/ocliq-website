@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Globe, Smartphone, Bot, Target } from 'lucide-react';
+import { Globe, Smartphone, Bot, Target, Check, Zap, TrendingUp, Star } from 'lucide-react';
 
 const WhatWeDo = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,26 +30,42 @@ const WhatWeDo = () => {
     {
       icon: Globe,
       title: 'Website Design & SEO',
-      description: 'Custom responsive websites with built-in SEO optimization to boost your rankings and conversions.',
-      features: ['Responsive design', 'SEO optimization', 'Speed optimization', 'Mobile-first']
+      description: 'Convert visitors into customers with high-performance websites.',
+      highlights: [
+        { icon: Zap, text: 'Lightning Fast' },
+        { icon: TrendingUp, text: 'SEO Optimized' },
+        { icon: Check, text: 'Mobile Ready' }
+      ]
     },
     {
       icon: Smartphone,
       title: 'Mobile App Development',
-      description: 'Native and cross-platform mobile apps that provide seamless experiences and drive growth.',
-      features: ['iOS & Android apps', 'Cross-platform', 'User-friendly UI', 'App store optimization']
+      description: 'Reach customers wherever they are with stunning mobile apps.',
+      highlights: [
+        { icon: Star, text: 'iOS & Android' },
+        { icon: Check, text: 'User-Friendly' },
+        { icon: TrendingUp, text: 'App Store Ready' }
+      ]
     },
     {
       icon: Bot,
       title: 'Chatbot Development',
-      description: 'AI-powered chatbots that automate support, qualify leads, and assist customers 24/7.',
-      features: ['AI-powered', '24/7 support', 'Lead qualification', 'Multi-platform']
+      description: 'Automate customer support and capture leads 24/7.',
+      highlights: [
+        { icon: Zap, text: 'AI-Powered' },
+        { icon: Check, text: '24/7 Available' },
+        { icon: Target, text: 'Lead Qualified' }
+      ]
     },
     {
       icon: Target,
       title: 'Lead Generation & CRM',
-      description: 'Automated lead generation with seamless CRM integration to capture and convert prospects.',
-      features: ['Lead automation', 'CRM integration', 'Email marketing', 'Analytics tracking']
+      description: 'Transform prospects into paying customers automatically.',
+      highlights: [
+        { icon: TrendingUp, text: 'Auto Capture' },
+        { icon: Check, text: 'CRM Integrated' },
+        { icon: Star, text: 'Analytics Ready' }
+      ]
     }
   ];
 
@@ -80,39 +96,84 @@ const WhatWeDo = () => {
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`group bg-gradient-glass p-6 rounded-xl hover-lift ${
+              className={`group relative p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${
                 isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
               style={{
                 animationDelay: `${index * 0.1}s`,
+                background: 'rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(5px)',
+                WebkitBackdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.3)'
               }}
               itemScope 
               itemType="https://schema.org/Service"
               role="article"
               aria-labelledby={`service-${index}-title`}
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative overflow-hidden bg-gradient-primary border border-white/20 backdrop-blur-sm"
-                style={{
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  boxShadow: '0 4px 15px rgba(0, 255, 209, 0.2)'
-                }}
-              >
-                {/* Wave animation effect */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)',
-                    animation: 'wave 2s ease-in-out infinite',
-                  }}
-                />
-                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white relative z-10 transition-all duration-300" />
-              </div>
               
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300"
+                    style={{
+                      background: 'linear-gradient(135deg, #0ea5e9, #06b6d4, #8b5cf6)',
+                      boxShadow: '0 4px 20px rgba(14, 165, 233, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                    }}
+                  >
+                    <service.icon className="w-6 h-6 text-white drop-shadow-sm" />
+                  </div>
+                  <div className="text-2xl font-bold text-white/30 group-hover:text-white/50 transition-all duration-300">
+                    0{index + 1}
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 
+                  id={`service-${index}-title`}
+                  className="text-lg font-bold text-white mb-2 transition-colors duration-300"
+                  itemProp="name"
+                >
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p 
+                  className="text-sm text-white/90 mb-4 leading-relaxed"
+                  itemProp="description"
+                >
+                  {service.description}
+                </p>
+
+                {/* Highlights */}
+                <div className="flex flex-wrap gap-1.5" itemProp="offers" itemScope itemType="https://schema.org/OfferCatalog">
+                  {service.highlights.map((highlight, highlightIndex) => (
+                    <div 
+                      key={highlightIndex} 
+                      className="flex items-center gap-1 rounded-full px-2 py-1 hover:bg-white/10 transition-all duration-200"
+                      itemProp="itemListElement"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(5px)',
+                        WebkitBackdropFilter: 'blur(5px)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)'
+                      }}
+                    >
+                      <highlight.icon className="w-2.5 h-2.5 text-white" />
+                      <span className="text-xs text-white/90 font-medium">{highlight.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Keyframe animation */}
               <style dangerouslySetInnerHTML={{
                 __html: `
@@ -122,30 +183,6 @@ const WhatWeDo = () => {
                   }
                 `
               }} />
-
-              <h3 
-                id={`service-${index}-title`}
-                className="heading-sm mb-var(--spacing-sm)"
-                itemProp="name"
-              >
-                {service.title}
-              </h3>
-
-              <p 
-                className="text-caption text-secondary mb-var(--spacing-md)"
-                itemProp="description"
-              >
-                {service.description}
-              </p>
-
-              <ul className="space-y-1 sm:space-y-1.5" itemProp="offers" itemScope itemType="https://schema.org/OfferCatalog">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start text-xs text-white/60" itemProp="itemListElement">
-                    <div className="w-1 h-1 rounded-full mr-2 mt-1.5 flex-shrink-0 bg-gradient-primary" role="presentation" aria-hidden="true"></div>
-                    <span className="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>

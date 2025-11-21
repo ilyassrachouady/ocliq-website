@@ -128,63 +128,74 @@ const Process = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className={`relative group ${
+            <article
+              key={index}
+              className={`group relative p-6 rounded-3xl transition-all duration-700 ease-out hover:-translate-y-3 hover:scale-[1.08] cursor-pointer overflow-hidden ${
                 isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                background: 'rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}
             >
+              {/* Apple-style glass shimmer effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div 
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"
+                />
+              </div>
+              
+              {/* Enhanced glass border glow */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.05))',
+                  filter: 'blur(1px)'
+                }}
+              />
               {/* Connection line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-[#0033ff]/20 to-transparent z-0 group-hover:from-[#0033ff]/60 transition-all duration-500"></div>
+                <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-white/20 to-transparent z-0 group-hover:from-white/40 transition-all duration-300"></div>
               )}
               
-              <div className="relative z-10 text-center bg-gradient-glass p-6 rounded-xl hover-lift h-full flex flex-col"
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl flex items-center justify-center mb-4 sm:mb-6 hover-scale relative overflow-hidden flex-shrink-0 bg-gradient-primary border border-white/20 backdrop-blur-sm"
-                  style={{
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    boxShadow: '0 4px 15px rgba(0, 212, 170, 0.2)'
-                  }}
-                >
-                  {/* Wave animation effect */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              <div className="relative z-20 text-center">
+                {/* Icon and Step Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-700 ease-out transform-gpu"
                     style={{
-                      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)',
-                      animation: 'wave 2s ease-in-out infinite',
+                      background: 'linear-gradient(135deg, #0ea5e9, #06b6d4, #8b5cf6)',
+                      boxShadow: '0 8px 32px rgba(14, 165, 233, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(20px) saturate(200%)',
+                      WebkitBackdropFilter: 'blur(20px) saturate(200%)',
                     }}
-                  />
-                  <step.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white relative z-10 transition-all duration-300" />
+                  >
+                    {/* Icon glow effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md" />
+                    <step.icon className="w-10 h-10 text-white drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-700" />
+                  </div>
                 </div>
-                
-                {/* Keyframe animation */}
-                <style dangerouslySetInnerHTML={{
-                  __html: `
-                    @keyframes wave {
-                      0% { transform: translateX(-100%); }
-                      100% { transform: translateX(100%); }
-                    }
-                  `
-                }} />
-                
-                <div className="text-sm font-semibold mb-2 sm:mb-3 text-gradient">
+
+                {/* Step Number */}
+                <div className="text-sm font-bold text-white/40 group-hover:text-white/70 mb-3 transition-all duration-700 transform group-hover:scale-105">
                   Step {index + 1}
                 </div>
                 
-                <h3 className="heading-sm mb-3 sm:mb-4">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/95 transition-all duration-700 transform group-hover:scale-105 group-hover:-translate-y-1">
                   {step.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-muted leading-relaxed">
+                {/* Description */}
+                <p className="text-sm text-white/80 group-hover:text-white/90 leading-relaxed transition-all duration-700 transform group-hover:scale-105">
                   {step.description}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

@@ -6,7 +6,6 @@ import Herov2 from './components/Herov2';
 import WhatWeDo from './components/WhatWeDo';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
-import TrustedCompanies from './components/TrustedCompanies';
 import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
 import ScrollToTop from './components/ScrollToTop';
