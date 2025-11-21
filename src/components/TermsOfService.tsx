@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const TermsOfService = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     // Disable scroll restoration
     if ('scrollRestoration' in history) {
@@ -31,9 +29,6 @@ const TermsOfService = () => {
       setTimeout(forceScrollTop, 200),
       setTimeout(forceScrollTop, 300)
     ];
-
-    // Trigger load animation
-    setTimeout(() => setIsLoaded(true), 100);
 
     return () => {
       timers.forEach(timer => clearTimeout(timer));

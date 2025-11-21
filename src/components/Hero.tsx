@@ -32,7 +32,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden header-offset">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
         <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent animate-beam animation-delay-2000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto container-padding text-center" ref={heroRef}>
+      <div className="relative z-10 max-w-7xl mx-auto text-center" ref={heroRef}>
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center space-x-2 bg-slate-900/5 px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <Sparkles className="w-4 h-4 text-[#00FFD1]" />
@@ -78,16 +78,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6 mb-12 sm:mb-14 lg:mb-16">
             <ShimmerButton
               onClick={() => scrollToSection('website-analysis')}
-              className="w-full sm:w-auto rounded-full font-semibold flex items-center space-x-2"
-              background="rgba(17,24,39,1)"
-              borderRadius="999px"
+              className="w-full sm:w-auto btn-primary text-sm sm:text-base flex items-center space-x-2"
             >
-              <span className="text-sm sm:text-base">Get Your Free Website Mockup</span>
+              <span>Get Your Free Website Mockup</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </ShimmerButton>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border-2 border-slate-200 hover:border-slate-300 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-sm sm:text-base"
+              className="w-full sm:w-auto btn-secondary text-sm sm:text-base"
             >
               View Our Work
             </button>

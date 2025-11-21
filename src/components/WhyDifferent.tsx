@@ -39,8 +39,8 @@ const WhyDifferent = () => {
           <p className="text-responsive text-slate-300 max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed px-4 sm:px-0">
             We don't guess. We analyze, strategize, and optimize using proven methods and real performance data.
           </p>
-          <div className="inline-flex items-center space-x-2 bg-[#00FFD1]/10 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-[#00FFD1]/20">
-            <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-[#00FFD1]" />
+          <div className="inline-flex items-center space-x-2 bg-cyan-400/10 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-cyan-400/20">
+            <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
             <span className="text-sm sm:text-base font-medium">Powered by Data & Experience</span>
           </div>
         </div>
@@ -49,11 +49,11 @@ const WhyDifferent = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group text-center p-6 rounded-2xl border border-slate-700 hover:border-[#00FFD1]/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 opacity-0 animate-fade-in-up"
+              className="group text-center p-6 rounded-2xl border border-slate-700 hover:border-cyan-400/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
             >
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#00FFD1]/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500">
-                <feature.icon className="w-8 h-8 text-[#00FFD1] group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500">
+                <feature.icon className="w-8 h-8 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
               </div>
               
               <h3 className="text-xl font-semibold mb-3">
@@ -64,7 +64,7 @@ const WhyDifferent = () => {
                 {feature.description}
               </p>
               
-              <div className="text-[#00FFD1] font-bold text-lg">
+              <div className="text-cyan-400 font-bold text-lg">
                 {feature.metric}
               </div>
             </div>
@@ -90,7 +90,7 @@ const WhyDifferent = () => {
             </div>
             
             <div className="border-l border-r border-slate-700 px-8">
-              <div className="text-[#00FFD1] font-bold mb-4">Ocliq</div>
+              <div className="text-cyan-400 font-bold mb-4">Ocliq</div>
               <div className="space-y-3">
                 <div>Custom strategic designs</div>
                 <div>Data-driven optimization</div>
@@ -100,7 +100,7 @@ const WhyDifferent = () => {
             </div>
             
             <div>
-              <div className="text-[#00FFD1] font-bold mb-4">Results</div>
+              <div className="text-cyan-400 font-bold mb-4">Results</div>
               <div className="space-y-3">
                 <div>+127% higher conversions</div>
                 <div>Measurable ROI</div>

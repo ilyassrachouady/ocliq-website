@@ -6,7 +6,7 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 // If environment variables are missing, export a harmless mock client so the app
 // can run in dev mode without connecting to Supabase. This avoids throwing an
 // error at module import time.
-let supabase: any;
+let supabase;
 
 if (supabaseUrl && supabaseAnonKey) {
   supabase = createClient(supabaseUrl, supabaseAnonKey);
@@ -14,10 +14,16 @@ if (supabaseUrl && supabaseAnonKey) {
   // Minimal mock that supports the `.from(table).insert(data)` shape used in the
   // codebase. It returns a resolved promise like the real client: { data, error }.
   supabase = {
-    from: (_table: string) => ({
-      insert: async (_payload: any) => ({ data: null, error: null }),
-      select: async () => ({ data: null, error: null }),
-    }),
+    from: (table: string) => {
+      void table;
+      return {
+        insert: async (payload: Partial<Lead>[]) => {
+          void payload;
+          return { data: null, error: null };
+        },
+        select: async () => ({ data: null, error: null }),
+      };
+    },
   };
 }
 
